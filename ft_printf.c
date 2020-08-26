@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/08/26 13:01:13 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/26 13:02:05 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		ft_printf(const char *format, ...)
 	t_flags data;
 
 	va_start(ap, format);
+	data = ft_resetflags();
 	i = 0;
 	while(format[i] != '\0')
 	{
