@@ -6,7 +6,7 @@
 #    By: pako <pako@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 10:36:02 by pako              #+#    #+#              #
-#    Updated: 2020/08/26 11:39:53 by pako             ###   ########.fr        #
+#    Updated: 2020/08/26 13:14:22 by pako             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,9 @@ NAME = libftprintf.a
 all: $(NAME)
 
 $(NAME):
-		@$(CC) $(FLAGS) -c $(SRC)
-		@ar rc $(NAME) $(OBJ)
+		-@$(CC) $(FLAGS) -I. -c $(SRC) $(LIB)
+		-@ar rc $(NAME) $(OBJ)
+		-@ranlib $(NAME)
 
 x:
 	@$(CC) $(FLAGS) -I. $(SRC) main.c $(LIB)
