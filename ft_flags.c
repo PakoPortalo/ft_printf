@@ -6,14 +6,15 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/08/26 12:49:34 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/26 12:55:14 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_flags	ft_resetflags(t_flags data)
+t_flags	ft_resetflags(void)
 {
+	t_flags data;
 	data.width = 0;
 	data.minus = 0;
 	data.precition = 0;
