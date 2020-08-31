@@ -6,14 +6,17 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/08/18 10:09:16 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/31 11:19:35 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+int		ft_putstr(char *s)
 {
+	int ret;
+
+	ret = 0;
 	int	i;
 
 	i = 0;
@@ -21,13 +24,18 @@ void	ft_putstr(char *s)
 	{
 		while (s[i] != '\0')
 		{
-			write(1 , &s[i], 1);
+			ret += write(1 , &s[i], 1);
 			i++;
 		}
 	}
+	return(ret);
 }
 
-void	ft_putstrMaster(char *s)
+int		ft_putstrMaster(char *s)
 {
+	int ret;
+
+	ret = 0;
 	ft_putstr(s);
+	return(ret);
 }

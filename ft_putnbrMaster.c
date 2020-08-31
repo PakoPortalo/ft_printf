@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/08/21 10:21:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/31 11:52:33 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,20 @@ int		ft_nbrWidth(int n, t_flags data)
 }
 
 
-void	ft_putnbr(int n)
+int		ft_putnbr(int n)
 {
 	char		c;
+	int			ret;
 
+	ret = 0;
 	if (n)
 	{
 		if (n < 0)
 		{
-			write(1, "-", 1);
+			ret += write(1, "-", 1);
 			if (n == -2147483648)
 			{
-				write(1, "2", 1);
+				ret += write(1, "2", 1);
 				n *= -1;
 				n = n % 1000000000;
 			}
@@ -53,11 +55,12 @@ void	ft_putnbr(int n)
 		}
 		if (n > 9)
 		{
-			ft_putnbr(n / 10);
+			ret += ft_putnbr(n / 10);
 		}
 		c = (n % 10) + '0';
-		write(1, &c, 1);
+		ret += write(1, &c, 1);
 	}
+	return(ret);
 }
 
 void	ft_nbrMinus(int n, int digit)
@@ -80,10 +83,12 @@ void	ft_nbrZero(int n, int digit)
 	ft_putnbr(n);
 }
 
-void	ft_putnbrMaster(int n, t_flags data)
+int		ft_putnbrMaster(int n, t_flags data)
 {
 	int digit;
+	int ret;
 
+	ret = 0;
 	digit = 0;
 	if(data.width != 0)
 		digit = ft_nbrWidth(n, data);
@@ -97,9 +102,10 @@ void	ft_putnbrMaster(int n, t_flags data)
 	{
 		while(digit != 0)
 		{
-			write(1, " ", 1);
+			ret += write(1, " ", 1);
 			digit--;
 		}
-		ft_putnbr(n);
+		ret += ft_putnbr(n);
 	}
+	return(ret);
 }
