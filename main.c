@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/08/21 10:21:27 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/27 11:52:22 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int		main()
 	ft_printf("Esto es una %0s.\nVamos a ver si podemos imprimir %s.\nOkei, me cago en la play.\n", prueba, empresa);
 
 */
-	int number;
+	//int number;
 
-	number = 2;
-	ft_printf("hola numbero %.4d", number); //No me funciona el salto de línea :-(
+	//number = 2;
+	ft_printf("hola numbero %%%%%%"); //No me funciona el salto de línea :-(
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/08/26 13:25:34 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/27 11:39:55 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_flags
 	int		isPrecition;
 	int		minus;	// For inverse width. Boolean
 	int		zero;	// For zeroes instead of blanks. Boolean
+	int		percentage;
 
 } t_flags;
 

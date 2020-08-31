@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:18:34 by pako              #+#    #+#             */
-/*   Updated: 2020/08/20 19:23:38 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/27 11:52:53 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,21 @@
 
 void	ft_varChannel(const char *format, int i, va_list ap, t_flags data)
 {
-	if(format[i] == 'c')
+	if(format[i] == '%')
+	{
+		if (data.percentage % 2 == 0)
+		{
+			data.percentage = data.percentage / 2;
+			while(data.percentage != 0)
+			{
+				printf("\n\nALAAAAAA\n\n");
+				write(1, "%", 1);
+				data.percentage--;
+			}
+		}
+	}
+	else if(format[i] == 'c')
 		ft_putcharMaster((char)va_arg(ap, int)); // putchar master
-
 	else if(format[i] == 's')
 		ft_putstrMaster(va_arg(ap, char *));
 	/*

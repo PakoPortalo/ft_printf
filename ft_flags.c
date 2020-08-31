@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/08/26 12:55:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/08/27 11:44:31 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_flags	ft_resetflags(void)
 	data.precition = 0;
 	data.isPrecition = 0;
 	data.zero = 0;
+	data.percentage = 1;
 	return(data);
 }
 
@@ -28,6 +29,8 @@ t_flags	ft_flags(t_flags data, const char *format, int i)
 
 	if (ft_strchr("-.*0123456789", format[i]))
 	{
+		if (ft_strchr("%", format[i]))
+			data.percentage += 1;
 		if (ft_strchr("0", format[i]))
 			data.zero = 1;
 		if (ft_strchr("-", format[i]))
