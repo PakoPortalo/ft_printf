@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 11:03:22 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/01 12:03:51 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,18 @@ int		ft_nbrZero(int n, int digit)
 	int ret;
 
 	ret = 0;
+	if (n < 0)
+	{
+		ret += write(1, "-", 1);
+		n = n * -1;
+		digit++;
+	}
 	while(digit != 0)
 	{
 		ret += write(1, "0", 1);
 		digit--;
 	}
-	ft_putnbr(n);
+	ret += ft_putnbr(n);
 	return(ret);
 }
 
