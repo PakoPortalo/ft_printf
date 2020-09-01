@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 10:52:15 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/01 11:03:22 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_nbrWidth(int n, t_flags data)
 		digit++;
 	}
 	if (data.width > digit)
-		m = data.width - digit - 1;
+		m = data.width - digit;
 	return(m);
 }
 
@@ -73,7 +73,7 @@ int	ft_nbrMinus(int n, int digit)
 	int ret;
 
 	ret = 0;
-	ft_putnbr(n);
+	ret += ft_putnbr(n);
 	while(digit != 0)
 	{
 		ret += write(1, " ", 1);
