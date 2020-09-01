@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 12:40:08 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/01 13:17:29 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,9 @@ int		ft_nbrZero(int n, int digit)
 	if (n < 0)
 	{
 		ret += write(1, "-", 1);
-		n = n * -1;
-		if (digit < n)
-			digit++;
+		n = -n;
 	}
-	else if (n == 0)
+	if (n == 0)
 		digit--;
 	while(digit != 0)
 	{
