@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 12:17:19 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/01 12:27:25 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int		main()
 	//int number;
 
 	//number = 22;
-	ft_printf("%.3d", 0); //No me funciona el salto de línea :-(
+	ft_printf("%.4d", -2372); //No me funciona el salto de línea :-(
 	return (0);
 }
