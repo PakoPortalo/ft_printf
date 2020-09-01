@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 10:42:32 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/01 10:52:15 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_nbrWidth(int n, t_flags data)
 		digit++;
 	}
 	if (data.width > digit)
-		m = data.width - digit;
+		m = data.width - digit - 1;
 	return(m);
 }
 
@@ -113,7 +113,7 @@ int		ft_putnbrMaster(int n, t_flags data)
 		ret += ft_nbrZero(n, digit);
 	else								//If Minus == False && Zero == False
 	{
-		while(digit > 0)
+		while(digit != 0)
 		{
 			ret += write(1, " ", 1);
 			digit--;
