@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 14:12:17 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/02 11:36:57 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,25 +105,27 @@ int		ft_nbrZero(int n, int digit)
 
 int		ft_putnbrMaster(int n, t_flags data)
 {
-	int digit;
+	int digitWidth;
+	int digitPrecition;
 	int ret;
 
 	ret = 0;
-	digit = 0;
+	digitWidth = 0;
+	digitPrecition = 0;
 	if(data.width != 0)
-		digit = ft_nbrWidth(n, data);
+		digitWidth = ft_nbrWidth(n, data);
 	if (data.minus == 1)				//If Minus == True
-		ret += ft_nbrMinus(n, digit);
+		ret += ft_nbrMinus(n, digitWidth);
 	else if(data.zero == 1)				//If Zero == True
-		ret += ft_nbrZero(n, digit);
+		ret += ft_nbrZero(n, digitWidth);
 	else if(data.isPrecition == 1)
-		ret += ft_nbrZero(n, digit);
+		ret += ft_nbrZero(n, digitPrecition);
 	else								//If Minus == False && Zero == False
 	{
-		while(digit != 0)
+		while(digitWidth != 0)
 		{
 			ret += write(1, " ", 1);
-			digit--;
+			digitWidth--;
 		}
 		ret += ft_putnbr(n);
 	}

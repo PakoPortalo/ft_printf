@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/08/31 11:51:01 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/02 13:33:47 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,9 @@ int		ft_printf(const char *format, ...)
 				printf("ERROR");
 				return(-1);
 			}
-			while (!ft_strchr("cspdiuxX", format[i]))
-			{
+			if (!ft_strchr("cspdiuxX", format[i]))
 				data = ft_flags(data, format, i);
-				i++;
-			}
+			i += data.i;
 			ret += ft_varChannel(format, i, ap, data);
 		}
 		i++;

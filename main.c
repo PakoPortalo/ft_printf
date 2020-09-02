@@ -6,9 +6,21 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/01 14:05:43 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/02 13:42:13 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+/*
+		Problemas:
+			* Width no es capaz de pillar números con más de un dígito
+			* Cómo configuro los casos en los que tenemos width + precition??
+
+*/
+
+
+
+
 
 #include "ft_printf.h"
 
@@ -27,6 +39,9 @@ int		main()
 	//int number;
 
 	//number = 22;
-	ft_printf("%.3d", -3); //No me funciona el salto de línea :-(
+	ft_printf("%10d\n", -3);
+	ft_printf("%11d\n", -3);
+	ft_printf("%12d\n", -3);
+
 	return (0);
 }
