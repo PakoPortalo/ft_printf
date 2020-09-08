@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/02 13:39:09 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/08 13:22:02 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@
 
 typedef struct s_flags
 {
-							//	struct other_stuff
-							//	{
-							//		int	ret;
-							//	} other_stuff
 	char	width;
 	char	precition;
+	int		digit;
 	int		isPrecition;
 	int		minus;	// For inverse width. Boolean
 	int		zero;	// For zeroes instead of blanks. Boolean

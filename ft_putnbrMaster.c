@@ -6,31 +6,26 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/02 11:36:57 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/04 10:06:07 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_nbrWidth(int n, t_flags data)
+int		ft_nbrDigit(int n, t_flags data)
 {
-	int	digit;
 	int m;
-	//if n < 0 --> be careful with minus character
-	//investigar ternarios ?
 
-	digit = 0;
+	data.digit = 0;
 	m = n;
 	if (m < 0)		// Esto es por el minus ???
-		digit++;
+		data.digit++;
 	while (m != 0)
 	{
 		m = m / 10;
-		digit++;
+		data.digit++;
 	}
-	if (data.width > digit)
-		m = data.width - digit; // m es la diferencia entre el ancho y el número de dígitos de n
-	return(m);
+	return(data.digit);
 }
 
 
@@ -105,29 +100,50 @@ int		ft_nbrZero(int n, int digit)
 
 int		ft_putnbrMaster(int n, t_flags data)
 {
-	int digitWidth;
-	int digitPrecition;
 	int ret;
 
 	ret = 0;
-	digitWidth = 0;
-	digitPrecition = 0;
-	if(data.width != 0)
-		digitWidth = ft_nbrWidth(n, data);
-	if (data.minus == 1)				//If Minus == True
-		ret += ft_nbrMinus(n, digitWidth);
+	data.digit = ft_nbrDigit(n, data);
+
+	if (data.width != 0)
+	{
+		if(data.minus == 1)
+			ret += ft_nbrMinus(n, data.digit);
+	}
 	else if(data.zero == 1)				//If Zero == True
-		ret += ft_nbrZero(n, digitWidth);
+		ret += ft_nbrZero(n, data.digit);
 	else if(data.isPrecition == 1)
-		ret += ft_nbrZero(n, digitPrecition);
+		ret += ft_nbrZero(n, data.digit);
 	else								//If Minus == False && Zero == False
 	{
-		while(digitWidth != 0)
+		while((data.width - data.digit) != 0)
 		{
 			ret += write(1, " ", 1);
-			digitWidth--;
+			data.width--;
 		}
-		ret += ft_putnbr(n);
 	}
+	ret += ft_putnbr(n);
+
+//	if((data.width == 1) && (data.isPrecition == 0))
+//	{
+//		if ((data.minus == 0) && (data.zero == 0))
+//		{
+//			while((data.width - data.digit) != 0)
+//			{
+//				write(1, " ", 1);
+//				data.width--;
+//			}
+//		}
+//		else if((data.minus == 1) && (data.zero == 0))
+//		{
+//
+//		}
+//
+//
+//
+//
+//	}
+
+
 	return(ret);
 }
