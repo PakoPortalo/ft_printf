@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/04 10:06:07 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/11 13:13:20 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,53 @@ int		ft_nbrZero(int n, int digit)
 	return(ret);
 }
 
+t_flags	ft_printBlanks(t_flags data)
+{
+	if ((data.width > data.digit) && (data.zero == 0))
+	{
+		while((data.width - data.digit) != 0)
+		{
+			write(1, " ", 1);
+			data.width--;
+		}
+	}
+	else if ((data.width > data.digit) && (data.zero == 1))
+	{
+		while((data.width - data.digit) != 0)
+		{
+			write(1, "0", 1);
+			data.width--;
+		}
+	}
+	return(data);
+}
+
+t_flags ft_precition(t_flags data)
+{
+	if (data.precition > data.width)
+	{
+		while ((data.precition - data.digit) != 0)
+		{
+			write(1, "0", 1);
+			data.precition --;
+		}
+	}
+	else if ((data.precition > data.width) && (data.minus == 0))
+	{
+		while ((data.width - data.precition) != 0)
+		{
+			write(1, " ",1);
+			data.width--;
+		}
+		while((data.precition - data.digit) != 0)
+		{
+			write(1, "0",1);
+			data.precition--;
+		}
+	}
+	return(data);
+}
+
 int		ft_putnbrMaster(int n, t_flags data)
 {
 	int ret;
@@ -105,44 +152,25 @@ int		ft_putnbrMaster(int n, t_flags data)
 	ret = 0;
 	data.digit = ft_nbrDigit(n, data);
 
-	if (data.width != 0)
-	{
-		if(data.minus == 1)
-			ret += ft_nbrMinus(n, data.digit);
-	}
-	else if(data.zero == 1)				//If Zero == True
-		ret += ft_nbrZero(n, data.digit);
-	else if(data.isPrecition == 1)
-		ret += ft_nbrZero(n, data.digit);
-	else								//If Minus == False && Zero == False
-	{
-		while((data.width - data.digit) != 0)
-		{
-			ret += write(1, " ", 1);
-			data.width--;
-		}
-	}
-	ret += ft_putnbr(n);
-
-//	if((data.width == 1) && (data.isPrecition == 0))
+	if ((data.isPrecition == 0) && (data.minus == 0))
+		ft_printBlanks(data);
+	else if (data.isPrecition == 1)
+		ft_precition(data);
+//	else if(data.zero == 1)				//If Zero == True
+//		ret += ft_nbrZero(n, data.digit);
+//	else if(data.isPrecition == 1)
+//		ret += ft_nbrZero(n, data.digit);
+//	else								//If Minus == False && Zero == False
 //	{
-//		if ((data.minus == 0) && (data.zero == 0))
+//		while((data.width - data.digit) != 0)
 //		{
-//			while((data.width - data.digit) != 0)
-//			{
-//				write(1, " ", 1);
-//				data.width--;
-//			}
+//			ret += write(1, " ", 1);
+//			data.width--;
 //		}
-//		else if((data.minus == 1) && (data.zero == 0))
-//		{
-//
-//		}
-//
-//
-//
-//
 //	}
+	ret += ft_putnbr(n);
+	if (data.minus == 1)
+		ft_printBlanks(data);
 
 
 	return(ret);
