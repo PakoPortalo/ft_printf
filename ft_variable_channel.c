@@ -6,14 +6,15 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:18:34 by pako              #+#    #+#             */
-/*   Updated: 2020/08/31 11:34:32 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/12 11:14:08 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_varChannel(const char *format, int i, va_list ap, t_flags data)
+t_flags		ft_varChannel(const char *format, va_list ap, t_flags data)
 {
+
 	//if(format[i] == '%')
 	//{
 	//	if (data.percentage % 2 == 0)
@@ -27,17 +28,18 @@ int		ft_varChannel(const char *format, int i, va_list ap, t_flags data)
 	//		}
 	//	}
 	//}
-	if(format[i] == 'c')
-		return(ft_putcharMaster((char)va_arg(ap, int))); // putchar master
-	else if(format[i] == 's')
-		return(ft_putstrMaster(va_arg(ap, char *)));
+	if(format[data.i] == 'c')
+		return(ft_putcharMaster((char)va_arg(ap, int), data)); // putchar master
+	else if(format[data.i] == 's')
+		return(ft_putstrMaster(va_arg(ap, char *), data));
 	/*
 	else if(format[i] == 'p')
 		//ft_putpointer
 	*/
-	else if(format[i] == 'd' || format[i] == 'i')	// empezar por aquí
+	else if(format[data.i] == 'd' || format[data.i] == 'i')	// empezar por aquí
 	{
 		return(ft_putnbrMaster(va_arg(ap, int), data));
+
 	}
 	/*
 	else if(format[i] == 'u')
@@ -47,5 +49,5 @@ int		ft_varChannel(const char *format, int i, va_list ap, t_flags data)
 	else if(format[i] == 'X')
 		//ft_put_hexadecimal upper
 	*/
-	return(0);
+	return(data);
 }

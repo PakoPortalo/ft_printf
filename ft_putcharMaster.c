@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:39:43 by pako              #+#    #+#             */
-/*   Updated: 2020/08/31 11:17:55 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/12 11:04:34 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ int		ft_putchar(char c)
 	return(ret);
 }
 
-int		ft_putcharMaster(char c)
+t_flags		ft_putcharMaster(char c, t_flags data)
 {
-	int ret;
-
-	ret = 0;
-	ret = ft_putchar(c);
-	return(ret);
+	data.ret += ft_putchar(c);
+	return(data);
 }

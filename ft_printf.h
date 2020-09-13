@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/08 13:22:02 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/12 11:03:22 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ typedef struct s_flags
 	int		zero;	// For zeroes instead of blanks. Boolean
 	int		percentage;
 	int		i;
+	int		ret;
 
 } t_flags;
 
 int			ft_printf(const char *format, ...);
-t_flags		ft_flags(t_flags data, const char *format, int i);
+t_flags		ft_flags(t_flags data, const char *format);
 t_flags		ft_resetflags(void);
-int			ft_varChannel(const char *format, int i, va_list ap, t_flags data);
-int			ft_putnbrMaster(int n, t_flags data);
-int			ft_putcharMaster(char c);
-int			ft_putstrMaster(char *s);
+t_flags		ft_varChannel(const char *format, va_list ap, t_flags data);
+t_flags		ft_putnbrMaster(int n, t_flags data);
+t_flags		ft_putcharMaster(char c, t_flags data);
+t_flags		ft_putstrMaster(char *s, t_flags data);
 int			ft_atoi(const char *str);
 char		*ft_strchr(const char *s, int c);
 int			ft_isnumber(int n);

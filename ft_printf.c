@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/09/08 13:22:09 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/12 11:29:39 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 int		ft_printf(const char *format, ...)
 {
-	int i;
-	int ret;
 	va_list ap;
 	t_flags data;
 
 	va_start(ap, format);
 	data = ft_resetflags();
-	i = 0;
-	ret = 0;
-	while(format[i] != '\0')
+	while(format[data.i] != '\0')
 	{
-		if (format[i] != '%')
-			ret += write(1, &format[i], 1);
+		if (format[data.i] != '%')
+			data.ret += write(1, &format[data.i], 1);
 		else
 		{
-			i++;
-			while (ft_strchr("-0.*123456789+ #", format[i]))
+			data.i++;
+			while (ft_strchr("-0.*123456789", format[data.i]))
 			{
-				data = ft_flags(data, format, i);
-				i++;
+				data = ft_flags(data, format);
+				data.i++;
 			}
-			ret += ft_varChannel(format, i, ap, data);
+			data = ft_varChannel(format, ap, data);
 		}
-		i++;
+		data.i++;
 	}
-	return(ret);
+	return(data.ret);
 }
 

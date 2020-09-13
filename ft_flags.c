@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/11 13:07:41 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/12 13:33:17 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,49 @@ t_flags	ft_resetflags(void)
 	data.zero = 0;
 	data.percentage = 1;
 	data.i = 0;
+	data.ret = 0;
 	return(data);
 }
 
-t_flags	ft_flags(t_flags data, const char *format, int i)
+t_flags	ft_flags(t_flags data, const char *format)
 {
-	if (ft_strchr("%", format[i - 1]) && (ft_strchr("0", format[i])))
-		data.zero = 1;
-	else if (ft_strchr("0123456789", format[i]) && (data.isPrecition == 0))
-		data.width = ft_atoi(&format[i]);
-	else if (ft_strchr("0123456789", format[i]) && (data.isPrecition != 0))
-		data.precition = ft_atoi(&format[i]);
-	else if ((format[i] == 0) && (data.minus == 0))
-		data.zero = 1;
-	else if (format[i] == '-')
-		data.minus = 1;
-	else if(format[i] == '.')
-		data.isPrecition = 1;
+	char strWidth[100];
+	char strPrecition[100];
+	int i;
+	int j;
 
+	i = 0;
+	j = 0;
+
+	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
+		data.zero = 1;
+	else if (ft_strchr("0123456789", format[data.i]) && (data.isPrecition == 0))
+	{
+		while (ft_strchr("012345789", format[data.i]))
+		{
+			strWidth[i] = format[data.i];
+			i++;
+			data.i++;
+		}
+		data.width = ft_atoi(strWidth);
+		data.i--;
+	}
+	else if (ft_strchr("0123456789", format[data.i]) && (data.isPrecition == 1))  //NO ENTRA AQUÍ
+	{
+		while (ft_strchr("012345789", format[data.i]))
+		{
+
+			strPrecition[j] = format[data.i];
+			j++;
+			data.i++;
+		}
+		data.precition = ft_atoi(strPrecition);
+		data.i--;
+	}
+	else if(format[data.i] == '.')
+		data.isPrecition = 1;
+	else if (format[data.i] == '-')
+		data.minus = 1;
 	return(data);
 }
 
