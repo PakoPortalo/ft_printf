@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:18:34 by pako              #+#    #+#             */
-/*   Updated: 2020/09/12 11:14:08 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/14 13:38:51 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ t_flags		ft_varChannel(const char *format, va_list ap, t_flags data)
 	else if(format[i] == 'p')
 		//ft_putpointer
 	*/
+
+
 	else if(format[data.i] == 'd' || format[data.i] == 'i')	// empezar por aquí
-	{
 		return(ft_putnbrMaster(va_arg(ap, int), data));
 
-	}
+
 	/*
 	else if(format[i] == 'u')
 		//ft_put_what
