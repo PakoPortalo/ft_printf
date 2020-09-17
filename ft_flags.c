@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/12 13:33:17 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/17 11:35:57 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,40 +35,49 @@ t_flags	ft_resetflags(void)
 	return(data);
 }
 
-t_flags	ft_flags(t_flags data, const char *format)
+t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 {
 	char strWidth[100];
 	char strPrecition[100];
 	int i;
 	int j;
-
+				//		%5.3d , 44
 	i = 0;
 	j = 0;
 
 	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
 		data.zero = 1;
-	else if (ft_strchr("0123456789", format[data.i]) && (data.isPrecition == 0))
+	else if (data.isPrecition == 0)  //si solo precition == 0
 	{
-		while (ft_strchr("012345789", format[data.i]))
+		if (ft_strchr("0123456789", format[data.i]))
 		{
-			strWidth[i] = format[data.i];
-			i++;
-			data.i++;
+			while (ft_strchr("012345789", format[data.i]))
+			{
+				strWidth[i] = format[data.i];
+				i++;
+				data.i++;
+			}
+			data.width = ft_atoi(strWidth);
+			data.i--;
 		}
-		data.width = ft_atoi(strWidth);
-		data.i--;
+		else if (format[data.i] == '*')
+			data.width = va_arg(ap, int);
 	}
-	else if (ft_strchr("0123456789", format[data.i]) && (data.isPrecition == 1))  //NO ENTRA AQUÍ
+	else if (data.isPrecition == 1) // si precition == 1
 	{
-		while (ft_strchr("012345789", format[data.i]))
+		if(ft_strchr("0123456789", format[data.i]))
 		{
-
-			strPrecition[j] = format[data.i];
-			j++;
-			data.i++;
+			while (ft_strchr("012345789", format[data.i]))
+			{
+				strPrecition[j] = format[data.i];
+				j++;
+				data.i++;
+			}
+			data.precition = ft_atoi(strPrecition);
+			data.i--;
 		}
-		data.precition = ft_atoi(strPrecition);
-		data.i--;
+		else if (format[data.i] == '*')
+			data.precition = va_arg(ap, int);
 	}
 	else if(format[data.i] == '.')
 		data.isPrecition = 1;

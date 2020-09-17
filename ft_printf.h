@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/12 11:03:22 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/17 11:27:21 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_flags
 } t_flags;
 
 int			ft_printf(const char *format, ...);
-t_flags		ft_flags(t_flags data, const char *format);
+t_flags		ft_flags(t_flags data, const char *format, va_list ap);
 t_flags		ft_resetflags(void);
 t_flags		ft_varChannel(const char *format, va_list ap, t_flags data);
 t_flags		ft_putnbrMaster(int n, t_flags data);
