@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/17 11:35:57 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/17 11:45:27 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 
 	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
 		data.zero = 1;
-	else if (data.isPrecition == 0)  //si solo precition == 0
+	else if(format[data.i] == '.')
+		data.isPrecition = 1;
+	else if (data.isPrecition == 0)
 	{
 		if (ft_strchr("0123456789", format[data.i]))
 		{
@@ -79,8 +81,6 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 		else if (format[data.i] == '*')
 			data.precition = va_arg(ap, int);
 	}
-	else if(format[data.i] == '.')
-		data.isPrecition = 1;
 	else if (format[data.i] == '-')
 		data.minus = 1;
 	return(data);
