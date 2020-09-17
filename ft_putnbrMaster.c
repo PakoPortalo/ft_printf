@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/17 11:37:02 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/17 14:23:35 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ int		ft_nbrDigit(int n, t_flags data)
 	m = n;
 	if (m < 0)		// Esto es por el minus ???
 		data.digit++;
-	while (m != 0)
+	else if(m == 0)
+		return (1);
+	else
 	{
-		m = m / 10;
-		data.digit++;
+		while (m != 0)
+		{
+			m = m / 10;
+			data.digit++;
+		}
 	}
 	return(data.digit);
 }
