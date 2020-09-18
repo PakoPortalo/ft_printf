@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/18 10:45:46 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/18 11:11:42 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,9 @@ int		main()
 	//printf("counter printf output: %d\n", printf("Hola papaya del siberespasio "));
 	//ft_printf("ft printf output: |%19d|\n", 3);
 	//printf("printf output:    |%19d|\n", 3);
-	ft_printf("ft printf output: |%7i\n|", 33);
-	printf("printf output:    |%7i\n|", 33);
+	//ft_printf("ft printf output: |%7i\n|", 33);
+	//printf("printf output:    |%7i\n|", 33);
 	//ft_printf("ft printf output: |%*.*d|\n", 2, 3, 4);
-	//printf("printf output:    |%*.*d|\n", 2, 3, 4);
 
 	//ft_printf("ft printf output: |%3d|\n", 0);
 	//printf("printf output:    |%3d|\n", 0);
@@ -76,6 +75,9 @@ int		main()
 	//printf("printf output:    |%.3i|\n", 13826);
 	//ft_printf("ft printf output: |%.6i|\n", -3);
 	//printf("printf output:    |%.6i|\n", -3);
+
+	ft_printf("ft printf output: |%10.5i|\n", -216);
+	printf("printf output:    |%10.5i|\n", -216);
 
 	return (0);
 }
