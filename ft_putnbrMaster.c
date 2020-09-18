@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/17 17:53:37 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/18 10:33:11 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,11 @@ t_flags	ft_printer(t_flags data)
 	}
 	else if ((data.width > data.digit) && (data.zero == 1))
 	{
+		if (data.nbr < 0)
+		{
+			write(1, "-", 1);
+			data.nbr = -data.nbr;
+		}
 		while((data.width - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -126,6 +131,11 @@ t_flags ft_precition(t_flags data)
 {
 	if (data.precition > data.width)
 	{
+		if (data.nbr < 0)
+		{
+			write(1, "-", 1);
+			data.nbr = -data.nbr;
+		}
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -161,6 +171,7 @@ t_flags ft_precition(t_flags data)
 
 t_flags	ft_putnbrMaster(int n, t_flags data)
 {
+	data.nbr = n;
 	data.digit = ft_nbrDigit(n, data);
 	if (data.minus == 0)
 	{
@@ -176,7 +187,7 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 		else if (data.isPrecition == 0)
 			data = ft_printer(data);
 	}
-	data.ret += ft_putnbr(n);
+	data.ret += ft_putnbr(data.nbr);
 	if (data.minus == 1)
 	{
 		if (n < 0)

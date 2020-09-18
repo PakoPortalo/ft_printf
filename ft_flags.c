@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/17 14:38:22 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/18 10:31:48 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_flags	ft_resetflags(void)
 	data.width = 0;
 	data.minus = 0;
 	data.precition = 0;
+	data.nbr = 0;
 	data.isPrecition = 0;
 	data.zero = 0;
 	data.percentage = 1;
@@ -41,21 +42,21 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 	char strPrecition[100];
 	int i;
 	int j;
-				//		%5.3d , 44
 	i = 0;
 	j = 0;
 
+	//write(1, &(format[data.i]), 1);
 	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
 		data.zero = 1;
 	else if(format[data.i] == '.')
 		data.isPrecition = 1;
 	else if (format[data.i] == '-')
 		data.minus = 1;
-	else if (data.isPrecition == 0)
+	else if (data.isPrecition == 0)		//Width
 	{
 		if (ft_strchr("0123456789", format[data.i]))
 		{
-			while (ft_strchr("012345789", format[data.i]))
+			while (ft_strchr("0123456789", format[data.i]))
 			{
 				strWidth[i] = format[data.i];
 				i++;
@@ -71,7 +72,7 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 	{
 		if(ft_strchr("0123456789", format[data.i]))
 		{
-			while (ft_strchr("012345789", format[data.i]))
+			while (ft_strchr("0123456789", format[data.i]))
 			{
 				strPrecition[j] = format[data.i];
 				j++;
