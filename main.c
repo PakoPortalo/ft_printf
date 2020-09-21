@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 13:01:20 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 13:35:49 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,19 @@ int		main()
 	ft_printf("Esto es una %0s.\nVamos a ver si podemos imprimir %s.\nOkei, me cago en la play.\n", prueba, empresa);
 
 */
+
+	//			ESPECIALITOS
+	//	probar con el flag -Werror desactivado
+
+	//ft_printf("ft printf output: |%08.3i|\n", 8375);
+	//printf("printf output:    |%08.3i|\n", 8375);
+	//ft_printf("ft printf output: |%0-8.5i|\n", -8473);
+	//printf("printf output:    |%0-8.5i|\n", -8473);
+	//ft_printf("ft printf output: |%0-8.5i|\n", 34);
+	//printf("printf output:    |%0-8.5i|\n", 34);
+	//ft_printf("ft printf output: |%0-10.5i|\n", -256);
+	//printf("printf output:    |%0-10.5i|\n", -256);
+
 
 	ft_printf("ft printf output: |%d|\n", 3);
 	printf("printf output:    |%d|\n", 3);
@@ -109,8 +122,25 @@ int		main()
 	printf("printf output:    |%-5.0d|\n", 0);
 	ft_printf("ft printf output: |%-5.d|\n", 0);
 	printf("printf output:    |%-5.d|\n", 0);
+	ft_printf("ft printf output: |%-3.3i|\n", -8462);
+	printf("printf output:    |%-3.3i|\n", -8462);
 
-
+	//ft_printf("ft printf output: |%08.3i|\n", -8473);
+	//printf("printf output:    |%08.3i|\n", -8473);
+	//ft_printf("ft printf output: |%0-3.3i|\n", -8462);
+	//printf("printf output:    |%0-3.3i|\n", -8462);
+	//ft_printf("ft printf output: |%08.3d|\n", -8473);
+	//printf("printf output:    |%08.3d|\n", -8473);
+	//ft_printf("ft printf output: |%0-3.3d|\n", -8462);
+	//printf("printf output:    |%0-3.3d|\n", -8462);
+	//ft_printf("ft printf output: |%08.3i|\n", 8375);
+	//printf("printf output:    |%08.3i|\n", 8375);
+	//ft_printf("ft printf output: |%0-8.5i|\n", -8473);
+	//printf("printf output:    |%0-8.5i|\n", -8473);
+	//ft_printf("ft printf output: |%0-8.5i|\n", 34);
+	//printf("printf output:    |%0-8.5i|\n", 34);
+	//ft_printf("ft printf output: |%0-10.5i|\n", -256);
+	//printf("printf output:    |%0-10.5i|\n", -256);
 
 	return (0);
 }

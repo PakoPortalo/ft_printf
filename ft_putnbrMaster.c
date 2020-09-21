@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 13:00:03 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 13:35:07 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,11 +115,6 @@ t_flags	ft_printer(t_flags data)
 	}
 	else if ((data.width > data.digit) && (data.zero == 1))
 	{
-		if (data.nbr < 0)
-		{
-			data.ret += write(1, "-", 1);
-			data.nbr = -data.nbr;
-		}
 		if (data.minus == 0)
 		{
 			if (data.isPrecition == 1)
@@ -129,9 +124,19 @@ t_flags	ft_printer(t_flags data)
 					data.ret += write(1, " ", 1);
 					data.width--;
 				}
+				if (data.nbr < 0)
+				{
+					data.ret += write(1, "-", 1);
+					data.nbr = -data.nbr;
+				}
 			}
 			else
 			{
+				if (data.nbr < 0)
+				{
+					data.ret += write(1, "-", 1);
+					data.nbr = -data.nbr;
+				}
 				while((data.width - data.digit) != 0)
 				{
 				data.ret += write(1, "0", 1);
@@ -165,13 +170,16 @@ t_flags ft_precition(t_flags data)
 			data.ret += write(1, "-", 1);
 			data.nbr = -data.nbr;
 		}
-		while ((data.precition - data.digit) != 0)
+		if (data.precition > data.digit)
 		{
-			data.ret += write(1, "0", 1);
-			data.precition --;
+			while ((data.precition - data.digit) != 0)
+			{
+				data.ret += write(1, "0", 1);
+				data.precition --;
+			}
 		}
 	}
-	else if (data.width > data.precition)
+	else if (data.width >= data.precition)
 	{
 		if (data.minus == 0)
 		{
