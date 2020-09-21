@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 09:48:34 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 10:47:55 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ t_flags	ft_printer(t_flags data)
 
 t_flags ft_precition(t_flags data)
 {
-	if (data.precition > data.width)
+	if (data.width < data.precition)
 	{
 		if (data.nbr < 0)
 		{
@@ -142,7 +142,7 @@ t_flags ft_precition(t_flags data)
 			data.precition --;
 		}
 	}
-	else if (data.precition < data.width)
+	else if (data.width > data.precition)
 	{
 		if (data.minus == 0)
 		{
@@ -191,6 +191,16 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 		}
 		else if (data.isPrecition == 0)
 			data = ft_printer(data);
+	}
+	else
+	{
+		if (n < 0)
+			data.width--;
+		if (data.isPrecition == 1)
+			data = ft_precition(data);
+		else if (data.isPrecition == 0)
+			data = ft_printer(data);
+
 	}
 	if ((data.precition == 0) && (data.nbr == 0)) // zero-blank cases
 	{
