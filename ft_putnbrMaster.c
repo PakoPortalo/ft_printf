@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 10:47:55 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 10:50:38 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,9 +198,6 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 			data.width--;
 		if (data.isPrecition == 1)
 			data = ft_precition(data);
-		else if (data.isPrecition == 0)
-			data = ft_printer(data);
-
 	}
 	if ((data.precition == 0) && (data.nbr == 0)) // zero-blank cases
 	{
