@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 08:49:13 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 09:29:15 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,6 @@ int		main()
 	//ft_printf("ft printf output: |%-8.5i|\n", 34);		HAY QUE CORREGIR ESTE
 	//printf("printf output:    |%-8.5i|\n", 34);
 
-	ft_printf("ft printf output: |%.0d|\n", 0);
-	printf("printf output:    |%.0d|\n", 0);
 	ft_printf("ft printf output: |%.d|\n", 0);
 	printf("printf output:    |%.d|\n", 0);
 	ft_printf("ft printf output: |%5.0d|\n", 0);
@@ -94,6 +92,14 @@ int		main()
 	printf("printf output:    |%-5.0d|\n", 0);
 	ft_printf("ft printf output: |%-5.d|\n", 0);
 	printf("printf output:    |%-5.d|\n", 0);
+
+	//
+	ft_printf("ft printf output: |%.0d|\n", 0);
+	printf("printf output:    |%.0d|\n", 0);
+	ft_printf("ft printf output: |%i|\n", 0);
+	printf("printf output:    |%i|\n", 0);
+
+
 
 	return (0);
 }
