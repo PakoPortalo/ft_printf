@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 12:04:01 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 13:00:03 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,10 +120,37 @@ t_flags	ft_printer(t_flags data)
 			data.ret += write(1, "-", 1);
 			data.nbr = -data.nbr;
 		}
-		while((data.width - data.digit) != 0)
+		if (data.minus == 0)
 		{
-			data.ret += write(1, "0", 1);
-			data.width--;
+			if (data.isPrecition == 1)
+			{
+				while((data.width - data.digit) != 0)
+				{
+					data.ret += write(1, " ", 1);
+					data.width--;
+				}
+			}
+			else
+			{
+				while((data.width - data.digit) != 0)
+				{
+				data.ret += write(1, "0", 1);
+				data.width--;
+				}
+			}
+			while((data.width - data.digit) != 0)
+			{
+				data.ret += write(1, "0", 1);
+				data.width--;
+			}
+		}
+		else if (data.minus == 1)
+		{
+			while((data.width - data.digit) != 0)
+			{
+				data.ret += write(1, " ", 1);
+				data.width--;
+			}
 		}
 	}
 	return(data);
