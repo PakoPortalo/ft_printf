@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 18:16:45 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/22 09:11:39 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_flags	ft_resetflags(void)
 	data.nbr = 0;
 	data.isPrecition = 0;
 	data.zero = 0;
-	data.percentage = 1;
 	data.i = 0;
 	data.ret = 0;
 	return(data);
