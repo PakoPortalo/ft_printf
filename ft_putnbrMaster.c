@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 09:18:12 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/22 09:25:36 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ int		ft_putnbr(int n)
 
 	ret = 0;
 	if (n == 0)
-	{
 		ret += write(1, "0", 1);
-		return (ret);
-	}
-	if (n)
+	else if (n)
 	{
 		if (n < 0)
 		{
@@ -193,10 +190,10 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 		if (data.isPrecition == 1)
 			data = ft_precition(data);
 	}
-	if ((data.precition == 0) && (data.nbr == 0)) // (where do i put this??? putnbrmaster doesn't write!)
+	if ((data.precition == 0) && (data.nbr == 0))
 	{
 		if ((data.isPrecition == 1) && (data.width > 0))
-				data.ret += write(1, " ", 1);
+			data.ret += write(1, " ", 1);
 		else if (data.isPrecition == 0)
 			data.ret += ft_putnbr(data.nbr);
 	}
@@ -208,5 +205,5 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 			data.width--;
 		data = ft_printer(data);
 	}
-	return(data);
+	return (data);
 }
