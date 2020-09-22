@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 09:11:34 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/22 13:24:30 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,21 @@ int			ft_printf(const char *format, ...);
 t_flags		ft_flags(t_flags data, const char *format, va_list ap);
 t_flags		ft_resetflags(void);
 t_flags		ft_varChannel(const char *format, va_list ap, t_flags data);
-//t_flags		ft_putpercMaster(char c, t_flags data);
 t_flags		ft_putnbrMaster(int n, t_flags data);
 t_flags		ft_putcharMaster(char c, t_flags data);
 t_flags		ft_putstrMaster(char *s, t_flags data);
 int			ft_atoi(const char *str);
 char		*ft_strchr(const char *s, int c);
 int			ft_isnumber(int n);
+int			ft_nbrDigit(int n, t_flags data);
+int			ft_putnbr(int n, int ret);
 t_flags		ft_isNegative(t_flags data);
+t_flags		ft_nbrprecition1(t_flags data);
+t_flags		ft_nbrprecition2(t_flags data);
+t_flags		ft_nbrprinter1(t_flags data);
+t_flags		ft_nbrprinter2(t_flags data);
+
+
 
 
 #endif

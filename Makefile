@@ -6,17 +6,17 @@
 #    By: pako <pako@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 10:36:02 by pako              #+#    #+#              #
-#    Updated: 2020/09/21 18:31:00 by pako             ###   ########.fr        #
+#    Updated: 2020/09/22 11:43:16 by pako             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Wextra
 
 CC = gcc
 
 
 SRC = 	ft_printf.c ft_flags.c ft_variable_channel.c ft_putnbrMaster.c ft_putcharMaster.c \
-		ft_putstrMaster.c ft_atoi.c ft_strchr.c ft_masterUtils.c
+		ft_putstrMaster.c ft_atoi.c ft_strchr.c ft_nbrmasterUtils1.c ft_nbrmasterUtils2.c
 
 OBJ = $(SRC:.c=.o)
 
