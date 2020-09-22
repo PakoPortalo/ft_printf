@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/21 13:35:07 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/22 09:07:55 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int		ft_nbrDigit(int n, t_flags data)
 	}
 	return(data.digit);
 }
-
 
 int		ft_putnbr(int n)
 {
@@ -66,41 +65,6 @@ int		ft_putnbr(int n)
 	return(ret);
 }
 
-int	ft_nbrMinus(int n, int digit)
-{
-	int ret;
-
-	ret = 0;
-	ret += ft_putnbr(n);
-	while(digit != 0)
-	{
-		ret += write(1, " ", 1);
-		digit--;
-	}
-	return(ret);
-}
-
-int		ft_nbrZero(int n, int digit)
-{
-	int ret;
-
-	ret = 0;
-	if (n == 0)
-		digit--;
-	else if (n < 0)
-	{
-		ret += write(1, "-", 1);
-		n = -n;
-	}
-	while(digit != 0)
-	{
-		ret += write(1, "0", 1);
-		digit--;
-	}
-	ret += ft_putnbr(n);
-	return(ret);
-}
-
 t_flags	ft_printer(t_flags data)
 {
 	if ((data.minus == 1) && (data.nbr < 0))
@@ -132,11 +96,7 @@ t_flags	ft_printer(t_flags data)
 			}
 			else
 			{
-				if (data.nbr < 0)
-				{
-					data.ret += write(1, "-", 1);
-					data.nbr = -data.nbr;
-				}
+				data = ft_isNegative(data);
 				while((data.width - data.digit) != 0)
 				{
 				data.ret += write(1, "0", 1);
@@ -165,11 +125,7 @@ t_flags ft_precition(t_flags data)
 {
 	if (data.width < data.precition)
 	{
-		if (data.nbr < 0)
-		{
-			data.ret += write(1, "-", 1);
-			data.nbr = -data.nbr;
-		}
+		data = ft_isNegative(data);
 		if (data.precition > data.digit)
 		{
 			while ((data.precition - data.digit) != 0)
@@ -188,11 +144,7 @@ t_flags ft_precition(t_flags data)
 				data.ret += write(1, " ",1);
 				data.width--;
 			}
-			if (data.nbr < 0)
-			{
-				data.ret += write(1, "-", 1);
-				data.nbr = -data.nbr;
-			}
+			data = ft_isNegative(data);
 			while((data.precition - data.digit) != 0)
 			{
 				data.ret += write(1, "0",1);
@@ -201,12 +153,7 @@ t_flags ft_precition(t_flags data)
 		}
 		else if (data.minus == 1)
 		{
-			if (data.nbr < 0)
-			{
-				data.ret += write(1, "-", 1);
-				data.width++;
-				data.nbr = -data.nbr;
-			}
+			data = ft_isNegative(data);
 			if (data.precition > data.digit)
 			{
 				while((data.precition - data.digit) != 0)
@@ -247,13 +194,10 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 		if (data.isPrecition == 1)
 			data = ft_precition(data);
 	}
-	if ((data.precition == 0) && (data.nbr == 0)) // zero-blank cases
+	if ((data.precition == 0) && (data.nbr == 0)) // (where do i put this??? putnbrmaster doesn't write!)
 	{
-		if (data.isPrecition == 1)
-		{
-			if (data.width > 0)
+		if ((data.isPrecition == 1) && (data.width > 0))
 				data.ret += write(1, " ", 1);
-		}
 		else if (data.isPrecition == 0)
 			data.ret += ft_putnbr(data.nbr);
 	}

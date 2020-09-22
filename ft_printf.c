@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/09/17 18:48:17 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 18:45:43 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_printf(const char *format, ...)
 		else
 		{
 			data.i++;
-			while (ft_strchr("-0.*123456789", format[data.i]))
+			while (ft_strchr("%-0.*123456789", format[data.i]))
 			{
 				data = ft_flags(data, format, ap);
 				data.i++;

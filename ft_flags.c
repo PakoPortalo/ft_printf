@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/18 10:31:48 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/21 18:16:45 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 	i = 0;
 	j = 0;
 
-	//write(1, &(format[data.i]), 1);
+	//if (ft_strchr("%", format[data.i]))
+	//	data.percentage++;
 	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
 		data.zero = 1;
 	else if(format[data.i] == '.')
