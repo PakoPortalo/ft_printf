@@ -6,13 +6,13 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 13:23:54 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/22 13:41:53 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_flags		ft_nbrprinter(t_flags data)
+t_flags	ft_nbrprinter(t_flags data)
 {
 	if ((data.minus == 1) && (data.nbr < 0))
 		data.width++;
@@ -23,7 +23,7 @@ t_flags		ft_nbrprinter(t_flags data)
 	return (data);
 }
 
-t_flags		ft_nbrprecition(t_flags data)
+t_flags	ft_nbrprecition(t_flags data)
 {
 	if (data.width < data.precition)
 		data = ft_nbrprecition1(data);
@@ -32,7 +32,7 @@ t_flags		ft_nbrprecition(t_flags data)
 	return (data);
 }
 
-t_flags		ft_putnbrMaster1(t_flags data)
+t_flags	ft_putnbrMaster1(t_flags data)
 {
 	if (data.isPrecition == 1)
 		data = (data.precition <= data.digit) ? ft_nbrprinter(data) : ft_nbrprecition(data);
@@ -41,7 +41,7 @@ t_flags		ft_putnbrMaster1(t_flags data)
 	return (data);
 }
 
-t_flags		ft_putnbrMaster(int n, t_flags data)
+t_flags	ft_putnbrMaster(int n, t_flags data)
 {
 	data.nbr = n;
 	data.digit = ft_nbrDigit(n, data);
@@ -56,10 +56,10 @@ t_flags		ft_putnbrMaster(int n, t_flags data)
 		if ((data.isPrecition == 1) && (data.width > 0))
 			data.ret += write(1, " ", 1);
 		else if (data.isPrecition == 0)
-			data.ret += ft_putnbr(data.nbr, data.ret);
+			data.ret = ft_putnbr(data.nbr, data.ret);
 	}
 	else
-		data.ret += ft_putnbr(data.nbr, data.ret);
+		data.ret = ft_putnbr(data.nbr, data.ret);
 	if (data.minus == 1)
 	{
 		if (n < 0)
