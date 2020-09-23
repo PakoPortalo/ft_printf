@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:11:24 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 13:48:33 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 17:00:15 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		ft_putnbr(int n, int ret)
 	return (ret);
 }
 
-t_flags		ft_subnbrprecition(t_flags data)
+t_flags		ft_subnbrprecition2(t_flags data)
 {
 	if (data.precition > data.digit)
 	{
@@ -105,7 +105,7 @@ t_flags		ft_nbrprecition2(t_flags data)
 	else if (data.minus == 1)
 	{
 		data = ft_isNegative(data);
-		data = ft_subnbrprecition(data);
+		data = ft_subnbrprecition2(data);
 	}
 	return(data);
 }

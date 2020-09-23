@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 16:48:29 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 17:14:38 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,14 +185,14 @@ int		main()
 	//ft_printf("ft printf output: |%-11.5s|\n", "Calabazon");
 	//printf("printf output:    |%-11.5s|\n\n", "Calabazon");
 
-	//ft_printf("ft printf output: |%10.3s|\n", "perro");
-	//printf("printf output:    |%10.3s|\n", "perro");	//width > digit > precition
-	//ft_printf("ft printf output: |%10.7s|\n", "perro");
-	//printf("printf output:    |%10.7s|\n", "perro");	//width > precition > digit
-	//ft_printf("ft printf output: |%3.10s|\n", "perro");
-	//printf("printf output:    |%3.10s|\n", "perro");	//precition > digit > width
-	//ft_printf("ft printf output: |%7.10s|\n", "perro");
-	//printf("printf output:    |%7.10s|\n", "perro");	//precition > width > digit
+	ft_printf("ft printf output: |%10.3s|\n", "perro");
+	printf("printf output:    |%10.3s|\n", "perro");	//width > digit > precition
+	ft_printf("ft printf output: |%10.7s|\n", "perro");
+	printf("printf output:    |%10.7s|\n", "perro");	//width > precition > digit
+	ft_printf("ft printf output: |%3.10s|\n", "perro");
+	printf("printf output:    |%3.10s|\n", "perro");	//precition > digit > width
+	ft_printf("ft printf output: |%7.10s|\n", "perro");
+	printf("printf output:    |%7.10s|\n", "perro");	//precition > width > digit
 	ft_printf("ft printf output: |%3.7s|\n", "calabazone");
 	printf("printf output:    |%3.7s|\n", "calabazone");	//digit > precition > width
 	ft_printf("ft printf output: |%7.3s|\n", "calabazone");
