@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 21:03:01 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 16:44:46 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,9 @@ t_flags		ft_strDigit(char *s, t_flags data)
 
 t_flags		ft_strPrinter(t_flags data)
 {
-//	if (data.isPrecition)
-//	{
-//		if (data.width )
-//	}
-	if ((data.width > data.digit) != 0)
+	if ((data.width >= data.digit) != 0)
 	{
+
 		while((data.width - data.digit) != 0)
 		{
 			data.ret += write(1, " ", 1);
@@ -61,13 +58,23 @@ t_flags		ft_strPrinter(t_flags data)
 
 t_flags		ft_putstrMaster(char *s, t_flags data)
 {
+
+	//data = ft_strDigit(s, data);
+	//if ((data.precition > data.width) && (data.digit > data.width))
+	//	data.ret += ft_putstr(s, data);
+	//else if ((data.width > data.precition) && (data.digit > data.precition))
+	//{
+	//	data = ft_strPrinter(data);
+	//	data.ret += ft_putstr(s, data);
+	//}
+
+
 	data = ft_strDigit(s, data);
-	data.precition = (data.precition < data.digit) ? data.precition : data.digit;
+	data.digit = (data.precition < data.digit) ? data.precition : data.digit;
 	if (data.minus == 0)
 		data = ft_strPrinter(data);
 	data.ret += ft_putstr(s, data);
 	if (data.minus == 1)
 		data = ft_strPrinter(data);
-
 	return(data);
 }
