@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 18:37:26 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 18:52:39 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ t_flags		ft_putstrMaster(char *s, t_flags data)
 	//printf("%d\n", data.precition);
 	//printf("%d\n", data.width);
 	data = ft_strDigit(s, data);
-	data.digit = (data.precition < data.digit) ? data.precition : data.digit;
+	if (data.isPrecition == 1)
+		data.digit = (data.precition < data.digit) ? data.precition : data.digit;
 	if (data.minus == 0)
 		data = ft_strPrinter(data);
 	data.ret += ft_putstr(s, data);
