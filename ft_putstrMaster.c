@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 18:52:39 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 19:19:47 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,6 @@ t_flags		ft_strPrinter(t_flags data)
 
 t_flags		ft_putstrMaster(char *s, t_flags data)
 {
-
-	//data = ft_strDigit(s, data);
-	//if ((data.precition > data.width) && (data.digit > data.width))
-	//	data.ret += ft_putstr(s, data);
-	//else if ((data.width > data.precition) && (data.digit > data.precition))
-	//{
-	//	data = ft_strPrinter(data);
-	//	data.ret += ft_putstr(s, data);
-	//}
-
-	//printf("%d\n", data.precition);
-	//printf("%d\n", data.width);
 	data = ft_strDigit(s, data);
 	if (data.isPrecition == 1)
 		data.digit = (data.precition < data.digit) ? data.precition : data.digit;
