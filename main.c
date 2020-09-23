@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 19:20:19 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 20:18:45 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,9 +204,11 @@ int		main()
 	//ft_printf("ft_printf output: |%32s|\n", "abc");
 	//printf("printf output:    |%32s|\n", "abc");
 
-	ft_printf("ft_printf output: |%.5s%7s|\n", "yo", "boi");
-	printf("printf output:    |%.5s%7s|\n", "yo", "boi");
+	//ft_printf("ft_printf output: |%.5s%7s|\n", "yo", "boi");		//mal
+	//printf("printf output:    |%.5s%7s|\n", "yo", "boi");
 
+	ft_printf("ft_printf output: |hello, %s.|\n", NULL);			//wtf?
+	printf("printf output:    |hello, %s.|\n", NULL);
 
 	return (0);
 }
