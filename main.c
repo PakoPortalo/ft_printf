@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 17:14:38 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 18:20:58 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,10 @@ int		main()
 	printf("printf output:    |%3.7s|\n", "calabazone");	//digit > precition > width
 	ft_printf("ft printf output: |%7.3s|\n", "calabazone");
 	printf("printf output:    |%7.3s|\n", "calabazone");	//digit > width > precition
+	ft_printf("ft_printf output: |Hello, %s|\n", "Gavin");
+	printf("printf output:    |Hello, %s|\n", "Gavin");
+	ft_printf("ft_printf output: |%s|\n", "Gavin");
+	printf("printf output:    |%s|\n", "Gavin");
 
 	return (0);
 }

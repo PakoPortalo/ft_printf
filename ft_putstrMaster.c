@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 17:21:45 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 18:37:26 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,28 @@ int		ft_putstr(char *s, t_flags data)
 {
 	int ret;
 
-	ret = 0;
 	int	i;
 
+	ret = 0;
 	i = 0;
 	if (s)
 	{
-		while ((s[i] != '\0') && (data.precition != 0))
+		if (data.isPrecition == 1)
 		{
-			ret += write(1 , &s[i], 1);
-			i++;
-			data.precition--;
+			while ((s[i] != '\0') && (data.digit != 0))
+			{
+				ret += write(1 , &s[i], 1);
+				i++;
+				data.digit--;
+			}
 		}
+		else
+			while (s[i] != '\0')
+			{
+				ret += write(1 , &s[i], 1);
+				i++;
+				data.precition--;
+			}
 	}
 	return(ret);
 }
@@ -42,9 +52,8 @@ t_flags		ft_strDigit(char *s, t_flags data)
 
 t_flags		ft_strPrinter(t_flags data)
 {
-	if ((data.width >= data.digit) != 0)
+	if (data.width > data.digit)
 	{
-
 		while((data.width - data.digit) != 0)
 		{
 			data.ret += write(1, " ", 1);

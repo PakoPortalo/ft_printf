@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 17:28:49 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 17:56:39 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_flags
 {
 	int		width;
 	int		precition;
-	int		nbr; //cucha
+	int		nbr;
 	int		digit;
 	int		isPrecition;
 	int		minus;
