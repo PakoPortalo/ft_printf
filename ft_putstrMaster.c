@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 20:48:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 09:22:46 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ t_flags		ft_putstrMaster(char *s, t_flags data)
 {
 	if (s == NULL)
 	{
+		if (data.width < 6)
+			data.width = 0;
 		if (data.precition < 6)
 			data.precition = 0;
 		s = "(null)";
