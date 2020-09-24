@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 20:41:38 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 09:17:33 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,13 +203,23 @@ int		main()
 	//printf("printf output:    |%s|\n", "Gavin");
 	//ft_printf("ft_printf output: |%32s|\n", "abc");
 	//printf("printf output:    |%32s|\n", "abc");
-
-	//ft_printf("ft_printf output: |%.5s%7s|\n", "yo", "boi");		//mal
+	//ft_printf("ft_printf output: |%.5s%7s|\n", "yo", "boi");
 	//printf("printf output:    |%.5s%7s|\n", "yo", "boi");
+	//ft_printf("ft_printf output: |hello, %s.|\n", NULL);
+	//printf("printf output:    |hello, %s.|\n", NULL);
+	//ft_printf("ft_printf output: |hello, %09s.|\n", "hi low");
+	//printf("printf output:    |hello, %09s.|\n", "hi low");
+	//ft_printf("ft_printf output: |%.4s|\n", NULL);
+	//printf("printf output:    |%.4s|\n", NULL);
 
-	ft_printf("ft_printf output: |hello, %s.|\n", NULL);			//wtf?
-	printf("printf output:    |hello, %s.|\n", NULL);
-	ft_printf("ft_printf output: |hello, %09s.|\n", "hi low");			//wtf?
-	printf("printf output:    |hello, %09s.|\n", "hi low");
+		// TESTS 'c'
+
+	ft_printf("ft_printf output: |%c|\n", 'd');
+	printf("printf output:    |%c|\n", 'd');
+	ft_printf("ft_printf output: |%4c|\n", 'd');
+	printf("printf output:    |%4c|\n", 'd');
+	ft_printf("ft_printf output: |%-4c|\n", 'd');
+	printf("printf output:    |%-4c|\n", 'd');
+
 	return (0);
 }

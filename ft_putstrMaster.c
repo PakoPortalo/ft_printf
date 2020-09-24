@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 20:40:38 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/23 20:48:14 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_flags		ft_strPrinter(t_flags data)
 				data.width--;
 			}
 		}
-		else
+		else	//Esto no hace falta pero me lo pide pft_2019 (???)
 		{
 			while((data.width - data.digit) != 0)
 			{
@@ -78,7 +78,11 @@ t_flags		ft_strPrinter(t_flags data)
 t_flags		ft_putstrMaster(char *s, t_flags data)
 {
 	if (s == NULL)
+	{
+		if (data.precition < 6)
+			data.precition = 0;
 		s = "(null)";
+	}
 	data = ft_strDigit(s, data);
 	if (data.isPrecition == 1)
 		data.digit = (data.precition < data.digit) ? data.precition : data.digit;
