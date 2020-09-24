@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 09:40:01 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 11:17:09 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,12 +214,19 @@ int		main()
 
 		// TESTS 'c'
 
-	ft_printf("ft_printf output: |%c%2c%3c%4c%5c%6c|\n", 'd', 'd', 'd', 'd', 'd', 'd');
-	printf("printf output:    |%c|\n", 'd');
-	ft_printf("ft_printf output: |%4c|\n", 'd');
-	printf("printf output:    |%4c|\n", 'd');
-	ft_printf("ft_printf output: |%-4c|\n", 'd');
-	printf("printf output:    |%-4c|\n", 'd');
+	//ft_printf("ft_printf output: |%c|\n", 'd');
+	//printf("printf output:    |%c|\n", 'd');
+	//ft_printf("ft_printf output: |%4c|\n", 'd');
+	//printf("printf output:    |%4c|\n", 'd');
+	//ft_printf("ft_printf output: |%-4c|\n", 'd');
+	//printf("printf output:    |%-4c|\n", 'd');
+	//ft_printf("ft_printf output: |%c%2c%3c%4c%5c%6c|\n", 'd', 'd', 'd', 'd', 'd', 'd');
+	//printf("printf output:    |%c%2c%3c%4c%5c%6c|\n", 'd', 'd', 'd', 'd', 'd', 'd');
+
+		// TESTS '%'
+
+	ft_printf("ft_printf output: |%|\n");
+	printf("printf output:    |%|\n");
 
 	return (0);
 }

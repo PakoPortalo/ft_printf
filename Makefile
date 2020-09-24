@@ -6,18 +6,18 @@
 #    By: pako <pako@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 10:36:02 by pako              #+#    #+#              #
-#    Updated: 2020/09/23 19:32:57 by pako             ###   ########.fr        #
+#    Updated: 2020/09/24 11:21:44 by pako             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
 
 SRC = 	ft_printf.c ft_flags.c ft_variable_channel.c ft_putnbrMaster.c ft_putcharMaster.c \
 		ft_putstrMaster.c ft_atoi.c ft_strchr.c ft_nbrmasterUtils1.c ft_nbrmasterUtils2.c \
-
+		ft_prcMaster.c
 
 OBJ = $(SRC:.c=.o)
 

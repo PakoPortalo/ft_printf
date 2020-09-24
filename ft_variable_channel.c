@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:18:34 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 20:22:07 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 11:21:09 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 t_flags		ft_varChannel(const char *format, va_list ap, t_flags data)
 {
 
-	//if(format[data.i] == '%')
-	//	return (ft_putpercMaster( '%', data));
-	if(format[data.i] == 'c')
+	if(format[data.i] == '%')
+		return (ft_putcharMaster('%', data));
+	else if(format[data.i] == 'c')
 		return(ft_putcharMaster((char)va_arg(ap, int), data)); // putchar master
 	else if(format[data.i] == 's')
 		return(ft_putstrMaster(va_arg(ap, char *), data));

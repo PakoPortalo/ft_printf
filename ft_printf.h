@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 20:17:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 10:02:29 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_flags		ft_flags(t_flags data, const char *format, va_list ap);
 t_flags		ft_resetflags(void);
 t_flags		ft_keepresetflags(t_flags data);
 t_flags		ft_varChannel(const char *format, va_list ap, t_flags data);
+t_flags		ft_putprcMaster(t_flags data);
 t_flags		ft_putnbrMaster(int n, t_flags data);
 t_flags		ft_putcharMaster(char c, t_flags data);
 t_flags		ft_putstrMaster(char *s, t_flags data);
