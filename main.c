@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 19:24:26 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 19:42:47 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,12 +271,19 @@ int		main()
 	//printf("printf output:    |%X|\n", 16);
 	//ft_printf("ft_printf output: |%X|\n", 17);
 	//printf("printf output:    |%X|\n", 17);
-
 	//ft_printf("%X\n", 17);
 	//printf("%X\n", 17);
+	//ft_printf("ft_printf output: |%5x|\n", 52625);
+	//printf("printf output:    |%5x|\n", 52625);
 
-	ft_printf("ft_printf output: |%5x|\n", 52625);
-	printf("printf output:    |%5x|\n", 52625);
+		// TEST 'p'
+
+	ft_printf("ft_printf output: |%p|\n", NULL);
+	printf("printf output:    |%p|\n", NULL);
+	ft_printf("ft_printf output: |%5p|\n", NULL);
+	printf("printf output:    |%5p|\n", NULL);
+	ft_printf("ft_printf output: |%2p|\n", NULL);
+	printf("printf output:    |%2p|\n", NULL);
 
 
 	return (0);
