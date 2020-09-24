@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 18:06:01 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 18:10:00 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_puthex(unsigned int n, t_flags data)
 
 	if (n > 0)
 	{
-		data.ret += ft_puthex(n / 16, data);
+		data.ret = ft_puthex(n / 16, data);
 		h = n % 16;
 		if (h > 9)
 			if (data.upperHex == 1)
@@ -47,7 +47,7 @@ int		ft_puthex(unsigned int n, t_flags data)
 				c = (h - 10) + 'a';
 		else
 			c = h + '0';
-		data.ret += write(1, &c, 1);
+		data.ret = write(1, &c, 1);
 	}
 	return (data.ret);
 }
