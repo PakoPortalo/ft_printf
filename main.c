@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 11:56:52 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 18:00:56 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,8 +234,44 @@ int		main()
 
 		// TESTS 'u'
 
-	ft_printf("ft_printf output: |%u|\n", 4294967295u); // Especialito -- Este en "print" me sale mal al compilar en Linux
-	printf("printf output:    |%u|\n", 4294967295u);
+	//ft_printf("ft_printf output: |%u|\n", 4294967295u); // Especialito -- Este en "print" me sale mal al compilar en Linux
+	//printf("printf output:    |%u|\n", 4294967295u);
+
+		// TEST 'x'
+
+	ft_printf("ft_printf output: |%x|\n", 4294967295u);
+	printf("printf output:    |%x|\n", 4294967295u);
+	ft_printf("ft_printf output: |%x|\n", 11);
+	printf("printf output:    |%x|\n", 11);
+	ft_printf("ft_printf output: |%x|\n", 101);
+	printf("printf output:    |%x|\n", 101);
+	ft_printf("ft_printf output: |%x|\n", 10);
+	printf("printf output:    |%x|\n", 10);
+	ft_printf("ft_printf output: |%x|\n", 11);
+	printf("printf output:    |%x|\n", 11);
+	ft_printf("ft_printf output: |%x|\n", 15);
+	printf("printf output:    |%x|\n", 15);
+	ft_printf("ft_printf output: |%x|\n", 16);
+	printf("printf output:    |%x|\n", 16);
+	ft_printf("ft_printf output: |%x|\n", 17);
+	printf("printf output:    |%x|\n", 17);
+
+	ft_printf("ft_printf output: |%X|\n", 4294967295u);
+	printf("printf output:    |%X|\n", 4294967295u);
+	ft_printf("ft_printf output: |%X|\n", 11);
+	printf("printf output:    |%X|\n", 11);
+	ft_printf("ft_printf output: |%X|\n", 101);
+	printf("printf output:    |%X|\n", 101);
+	ft_printf("ft_printf output: |%X|\n", 10);
+	printf("printf output:    |%X|\n", 10);
+	ft_printf("ft_printf output: |%X|\n", 11);
+	printf("printf output:    |%X|\n", 11);
+	ft_printf("ft_printf output: |%X|\n", 15);
+	printf("printf output:    |%X|\n", 15);
+	ft_printf("ft_printf output: |%X|\n", 16);
+	printf("printf output:    |%X|\n", 16);
+	ft_printf("ft_printf output: |%X|\n", 17);
+	printf("printf output:    |%X|\n", 17);
 
 	return (0);
 }

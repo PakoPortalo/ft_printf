@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:18:34 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 11:59:18 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 17:58:05 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ t_flags		ft_varChannel(const char *format, va_list ap, t_flags data)
 	else if(format[i] == 'p')
 		//ft_putpointer
 	*/
+
 	else if(format[data.i] == 'd' || format[data.i] == 'i')
-		return(ft_putnbrMaster(va_arg(ap, int), data));
+		return (ft_putnbrMaster(va_arg(ap, int), data));
 	else if(format[data.i] == 'u')
-		return(ft_putunsMaster(va_arg(ap, unsigned int), data));
-	/*
-	else if(format[i] == 'x')
-		//ft_put_hexadecimal lower
-	else if(format[i] == 'X')
-		//ft_put_hexadecimal upper
-	*/
+		return (ft_putunsMaster(va_arg(ap, unsigned int), data));
+	else if(format[data.i] == 'x' || format[data.i] == 'X')
+	{
+		if (format[data.i] == 'X')
+			data.upperHex++;
+		return (ft_puthexMaster(va_arg(ap, unsigned int), data));
+	}
 	return(data);
 }

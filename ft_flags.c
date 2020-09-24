@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 12:08:25 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 17:55:15 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_flags	ft_resetflags(void)
 	data.minus = 0;
 	data.digit = 0;
 	data.precition = 0;
+	data.upperHex = 0;
 	data.nbr = 0;
 	data.uns = 0;
 	data.isPrecition = 0;
@@ -43,6 +44,7 @@ t_flags	ft_keepresetflags(t_flags data)
 	data.minus = 0;
 	data.digit = 0;
 	data.precition = 0;
+	data.upperHex = 0;
 	data.nbr = 0;
 	data.uns = 0;
 	data.isPrecition = 0;
