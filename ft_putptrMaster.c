@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 20:26:53 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 20:31:35 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_flags	ft_putptrMaster(unsigned int n, t_flags data)
 		data = ft_putptrMaster2(data);
 	else
 	{
-		if (data.precition > data.digit)
+		if ((data.precition > data.digit) || (data.width > data.precition))
 			data.ret += write(1, "0x", 2);
 		data.ret += ft_putptr(data.uns, data);
 	}
