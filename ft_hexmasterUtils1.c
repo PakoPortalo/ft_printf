@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 18:38:18 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 18:40:32 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ void		ft_puthex(unsigned int n, t_flags *data)
 	char			c;
 	unsigned int	h;
 
-	if (n > 0)
+	if (n == 0)
+		(*data).ret += write(1, "0", 1);
+	else if (n > 0)
 	{
 		ft_puthex(n / 16, data);
 		h = n % 16;
@@ -47,8 +49,8 @@ void		ft_puthex(unsigned int n, t_flags *data)
 				c = (h - 10) + 'a';
 		else
 			c = h + '0';
+		(*data).ret += write(1, &c, 1);
 	}
-	(*data).ret += write(1, &c, 1);
 }
 
 t_flags		ft_subhexprecition2(t_flags data)
