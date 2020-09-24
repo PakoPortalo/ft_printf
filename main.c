@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 11:38:08 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 11:56:52 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,12 +227,15 @@ int		main()
 
 	//ft_printf("ft_printf output: |%|\n"); //con -Werror no lo pasa
 	//printf("printf output:    |%|\n");
-
-	ft_printf("ft_printf output: |%05%|\n"); // Especialito -- Este en "print" me sale mal al compilar en Linux
-	printf("printf output:    |%05%|\n");
-
+	//ft_printf("ft_printf output: |%05%|\n"); // Especialito -- Este en "print" me sale mal al compilar en Linux
+	//printf("printf output:    |%05%|\n");
 	//ft_printf("ft_printf output: |%-5|\n"); // Especialito -- Este en "print" me sale mal al compilar en Linux
 	//printf("printf output:    |%-5|\n");
+
+		// TESTS 'u'
+
+	ft_printf("ft_printf output: |%u|\n", 4294967295u); // Especialito -- Este en "print" me sale mal al compilar en Linux
+	printf("printf output:    |%u|\n", 4294967295u);
 
 	return (0);
 }
