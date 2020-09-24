@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:06:38 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 18:34:51 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 18:42:24 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_flags	ft_puthexMaster2(t_flags data)
 		if ((data.isPrecition == 1) && (data.width > 0))
 			data.ret += write(1, " ", 1);
 		else if (data.isPrecition == 0)
-			ft_puthex(data.nbr, &data);
+			data.ret += ft_puthex(data.nbr, data);
 	}
 	return (data);
 }
@@ -63,7 +63,7 @@ t_flags	ft_puthexMaster(unsigned int n, t_flags data)
 	if ((data.precition == 0) && (data.uns == 0))
 		data = ft_puthexMaster2(data);
 	else
-		ft_puthex(data.uns, &data);
+		data.ret += ft_puthex(data.uns, data);
 	if (data.minus == 1)
 		data = ft_hexprinter(data);
 	return (data);

@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 18:40:32 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 19:00:47 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,48 @@ unsigned int		ft_hexDigit(unsigned int n, t_flags data)
 	return (data.digit);
 }
 
-void		ft_puthex(unsigned int n, t_flags *data)
+int		ft_puthex(unsigned int n, t_flags data)
 {
+//	char			c;
+//	unsigned int	h;
+//
+//	if (n == 0)
+//		data.ret += write(1, "0", 1);
+//	else if (n > 0)
+//	{
+//		ft_puthex(n / 16, data);
+//		h = n % 16;
+//		if (h > 9)
+//			if (data.upperHex == 1)
+//				c = (h - 10) + 'A';
+//			else
+//				c = (h - 10) + 'a';
+//		else
+//			c = h + '0';
+//		data.ret += write(1, &c, 1);
+//	}
+
 	char			c;
 	unsigned int	h;
 
+	h = 0;
 	if (n == 0)
-		(*data).ret += write(1, "0", 1);
-	else if (n > 0)
+		data.ret += write(1, "0", 1);
+	else if (n)
 	{
-		ft_puthex(n / 16, data);
+		if (n >= 16)
+			data.ret = ft_puthex((n / 16), data);
 		h = n % 16;
-		if (h > 9)
-			if ((*data).upperHex == 1)
-				c = (h - 10) + 'A';
-			else
+		if(h > 9)
+			if(data.upperHex == 0)
 				c = (h - 10) + 'a';
+			else
+				c = (h - 10) + 'A';
 		else
 			c = h + '0';
-		(*data).ret += write(1, &c, 1);
+		data.ret += write(1, &c, 1);
 	}
+	return (data.ret);
 }
 
 t_flags		ft_subhexprecition2(t_flags data)

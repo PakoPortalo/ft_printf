@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 18:34:31 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 18:42:02 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_flags			ft_unsprinter1(t_flags data);
 t_flags			ft_unsprinter2(t_flags data);
 
 t_flags			ft_puthexMaster(unsigned int n, t_flags data);
-void			ft_puthex(unsigned int n, t_flags *data);
+int				ft_puthex(unsigned int n, t_flags data);
 unsigned int	ft_hexDigit(unsigned int n, t_flags data);
 t_flags			ft_hexprecition1(t_flags data);
 t_flags			ft_hexprecition2(t_flags data);
