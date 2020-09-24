@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 19:17:20 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 19:25:42 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ unsigned int		ft_hexDigit(unsigned int n, t_flags data)
 	{
 		while (m != 0)
 		{
-			m = m / 10;
+			m = m / 16;
 			data.digit++;
 		}
 	}
