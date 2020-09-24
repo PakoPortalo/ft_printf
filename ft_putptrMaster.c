@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 20:31:35 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 20:42:23 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_flags	ft_putptrMaster2(t_flags data)
 	return (data);
 }
 
-t_flags	ft_putptrMaster(unsigned int n, t_flags data)
+t_flags	ft_putptrMaster(unsigned long int n, t_flags data)
 {
 	data.uns = n;
 	if (data.width >= 2)
