@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 19:56:59 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 20:08:43 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ t_flags	ft_putptrMaster2(t_flags data)
 	{
 		if ((data.isPrecition == 1) && (data.width > 0))
 			data.ret += write(1, " ", 1);
+		else if((data.isPrecition == 1) && (data.width == 0))
+		{
+			data.ret += write(1, "0x", 2);
+		}
 		else if (data.isPrecition == 0)
 		{
 			data.ret += write(1, "0x", 2);
