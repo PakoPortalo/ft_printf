@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 20:22:05 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/24 20:27:16 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ t_flags		ft_ptrprecition1(t_flags data)
 	if (data.precition > data.digit)
 	{
 		data.ret += write(1, "0x", 2);
-		data.precition -= 2;
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
