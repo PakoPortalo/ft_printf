@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 12:22:09 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:45:08 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_flags	ft_putptrMaster1(t_flags data)
 	return (data);
 }
 
-t_flags	ft_putptrMaster2(unsigned long int n, t_flags data)
+t_flags	ft_putptrMaster2(t_flags data)
 {
 	{
 		if ((data.isPrecition == 1) && (data.width > 0))
@@ -61,7 +61,7 @@ t_flags	ft_putptrMaster2(unsigned long int n, t_flags data)
 	return (data);
 }
 
-t_flags	ft_putptrMaster(unsigned long int n, t_flags data)
+t_flags	ft_putptrMaster(unsigned long n, t_flags data)
 {
 	data.uns = n;
 	if (data.width >= 2)
@@ -72,7 +72,7 @@ t_flags	ft_putptrMaster(unsigned long int n, t_flags data)
 	else
 			data = ft_ptrprecition(data);
 	if ((data.precition == 0) && (data.uns == 0))
-		data = ft_putptrMaster2(n, data);
+		data = ft_putptrMaster2(data);
 	else
 	{
 		if ((data.precition > data.digit) || (data.width > data.precition) || \

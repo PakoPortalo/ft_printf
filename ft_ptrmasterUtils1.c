@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 12:24:54 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:43:59 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ unsigned int		ft_ptrDigit(unsigned int n, t_flags data)
 	return (data.digit);
 }
 
-int		ft_putptr(unsigned long int n, t_flags data)
+int		ft_putptr(unsigned long n, t_flags data)
 {
 
 	char				c;
@@ -48,10 +48,7 @@ int		ft_putptr(unsigned long int n, t_flags data)
 			ret += ft_putptr((n / 16), data);
 		h = n % 16;
 		if(h > 9)
-			if(data.upperHex == 0)
 				c = (h - 10) + 'a';
-			else
-				c = (h - 10) + 'A';
 		else
 			c = h + '0';
 		ret += write(1, &c, 1);
