@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 12:20:51 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:24:54 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ unsigned int		ft_ptrDigit(unsigned int n, t_flags data)
 int		ft_putptr(unsigned long int n, t_flags data)
 {
 
-	char			c;
-	unsigned int	h;
-	int				ret;
+	char				c;
+	unsigned long int	h;
+	int					ret;
 
 	ret = 0;
 	h = 0;
