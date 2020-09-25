@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 20:47:35 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 11:49:26 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_flags			ft_hexprecition2(t_flags data);
 t_flags			ft_hexprinter1(t_flags data);
 t_flags			ft_hexprinter2(t_flags data);
 
-t_flags			ft_putptrMaster(unsigned long n, t_flags data);
+t_flags			ft_putptrMaster(unsigned long int n, t_flags data);
 int				ft_putptr(unsigned long n, t_flags data);
 unsigned int	ft_ptrDigit(unsigned int n, t_flags data);
 t_flags			ft_ptrprecition1(t_flags data);

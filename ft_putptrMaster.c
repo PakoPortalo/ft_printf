@@ -6,11 +6,21 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 20:47:51 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:13:49 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+t_flags	ft_begginptr(unsigned long int n, t_flags data)
+{
+	if (n == NULL)
+		data.ret += write(1, "0x", 2);
+	else
+		data.ret += write(1, "0x10", 4);
+
+	return(data);
+}
 
 t_flags	ft_ptrprinter(t_flags data)
 {
@@ -41,26 +51,26 @@ t_flags	ft_putptrMaster1(t_flags data)
 	return (data);
 }
 
-t_flags	ft_putptrMaster2(t_flags data)
+t_flags	ft_putptrMaster2(unsigned long int n, t_flags data)
 {
 	{
 		if ((data.isPrecition == 1) && (data.width > 0))
 		{
 			data.ret += write(1, " ", 1);
-			data.ret += write(1, "0x", 2);
+			data = ft_begginptr(n, data);
 		}
 		else if((data.isPrecition == 1) && (data.width == 0))
-			data.ret += write(1, "0x", 2);
+			data = ft_begginptr(n, data);
 		else if (data.isPrecition == 0)
 		{
-			data.ret += write(1, "0x", 2);
+			data = ft_begginptr(n, data);
 			data.ret += ft_putptr(data.nbr, data);
 		}
 	}
 	return (data);
 }
 
-t_flags	ft_putptrMaster(unsigned long n, t_flags data)
+t_flags	ft_putptrMaster(unsigned long int n, t_flags data)
 {
 	data.uns = n;
 	if (data.width >= 2)
@@ -71,11 +81,12 @@ t_flags	ft_putptrMaster(unsigned long n, t_flags data)
 	else
 			data = ft_ptrprecition(data);
 	if ((data.precition == 0) && (data.uns == 0))
-		data = ft_putptrMaster2(data);
+		data = ft_putptrMaster2(n, data);
 	else
 	{
-		if ((data.precition > data.digit) || (data.width > data.precition))
-			data.ret += write(1, "0x", 2);
+		if ((data.precition > data.digit) || (data.width > data.precition) || \
+		((data.precition == 0) && (data.width == 0)))
+			data = ft_begginptr(n, data);
 		data.ret += ft_putptr(data.uns, data);
 	}
 	if (data.minus == 1)

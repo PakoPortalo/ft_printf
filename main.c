@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 11:39:58 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:11:21 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int		main()
 	ft_printf("Esto es una %0s.\nVamos a ver si podemos imprimir %s.\nOkei, me cago en la play.\n", prueba, empresa);
 
 */
+	int a;
 
+	a = 3;
 
 	// TESTS INTS 'd' AND 'i'
 
@@ -211,8 +213,8 @@ int		main()
 	//printf("printf output:    |hello, %09s.|\n", "hi low");
 	//ft_printf("ft_printf output: |%.4s|\n", NULL);
 	//printf("printf output:    |%.4s|\n", NULL);
-	ft_printf("ft_printf output: |%-*s|\n", -32);
-	printf("printf output:    |%-*s|\n", -32);
+	//ft_printf("ft_printf output: |%-*s|\n", -32);
+	//printf("printf output:    |%-*s|\n", -32);
 
 		// TESTS 'c'
 
@@ -302,8 +304,8 @@ int		main()
 	//printf("printf output:    |%5p|\n", 14);
 	//ft_printf("ft_printf output: |%2p|\n", 3);
 	//printf("printf output:    |%2p|\n", 3);
-	//ft_printf("ft_printf output: |%p|\n", &a);
-	//printf("printf output:    |%p|\n", &a);
+	ft_printf("ft_printf output: |%p|\n", &a);
+	printf("printf output:    |%p|\n", &a);
 
 
 	return (0);
