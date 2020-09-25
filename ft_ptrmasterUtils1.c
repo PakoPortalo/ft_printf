@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 12:43:59 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:53:48 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,42 @@ unsigned int		ft_ptrDigit(unsigned int n, t_flags data)
 	return (data.digit);
 }
 
-int		ft_putptr(unsigned long n, t_flags data)
+t_flags		ft_putptr(unsigned long int n, t_flags data)
 {
-
-	char				c;
-	unsigned long int	h;
-	int					ret;
-
-	ret = 0;
-	h = 0;
-	if (n == 0)
-		ret += write(1, "0", 1);
-	else if (n)
-	{
-		if (n >= 16)
-			ret += ft_putptr((n / 16), data);
-		h = n % 16;
-		if(h > 9)
-				c = (h - 10) + 'a';
-		else
-			c = h + '0';
-		ret += write(1, &c, 1);
-	}
-	return (ret);
+    char *base;
+	base = "0123456789abcdef";
+    if (n >= 16)
+		ft_putptr(n / 16, data);
+	data.ret = write(1, &base[n %  16], 1);
+	return(data);
 }
+
+
+
+//int		ft_putptr(unsigned long n, t_flags data)
+//{
+//
+//	char				c;
+//	unsigned long int	h;
+//	int					ret;
+//
+//	ret = 0;
+//	h = 0;
+//	if (n == 0)
+//		ret += write(1, "0", 1);
+//	else if (n)
+//	{
+//		if (n >= 16)
+//			ret += ft_putptr((n / 16), data);
+//		h = n % 16;
+//		if(h > 9)
+//				c = (h - 10) + 'a';
+//		else
+//			c = h + '0';
+//		ret += write(1, &c, 1);
+//	}
+//	return (ret);
+//}
 
 t_flags		ft_subptrprecition2(t_flags data)
 {
