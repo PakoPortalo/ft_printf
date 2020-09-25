@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 13:46:35 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 14:57:10 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ t_flags	ft_putptrMaster2(unsigned long n, t_flags data)
 t_flags	ft_putptrMaster(unsigned long n, t_flags data)
 {
 	data.uns = n;
-	if (data.width >= 2)
-		data.width -= 2;
 	data.digit = ft_ptrDigit(n, data);
 	if (data.minus == 0)
 		data = ft_putptrMaster1(n, data);
