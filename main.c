@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 14:19:44 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 14:27:31 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,30 +282,30 @@ int		main()
 
 		// TEST 'p'
 
-	ft_printf("ft_printf output: |%p|\n", NULL);
-	printf("printf output:    |%p|\n", NULL);
-	ft_printf("ft_printf output: |%5p|\n", NULL);
-	printf("printf output:    |%5p|\n", NULL);
-	ft_printf("ft_printf output: |%2p|\n", NULL);
-	printf("printf output:    |%2p|\n", NULL);
-	ft_printf("ft_printf output: |%.p|\n", NULL);
-	printf("printf output:    |%.p|\n", NULL);
-	ft_printf("ft_printf output: |%5.p|\n", NULL);
-	printf("printf output:    |%5.p|\n", NULL);
-
-
-	ft_printf("ft_printf output: |%2.9p|\n", 1234);
-	printf("printf output:    |%2.9p|\n", 1234);
-	ft_printf("ft_printf output: |%9.2p|\n", 1234);
-	printf("printf output:    |%9.2p|\n", 1234);
-	ft_printf("ft_printf output: |%p|\n", 4);
-	printf("printf output:    |%p|\n", 4);
-	ft_printf("ft_printf output: |%5p|\n", 14);
-	printf("printf output:    |%5p|\n", 14);
-	ft_printf("ft_printf output: |%2p|\n", 3);
-	printf("printf output:    |%2p|\n", 3);
+	//ft_printf("ft_printf output: |%p|\n", NULL);
+	//printf("printf output:    |%p|\n", NULL);
+	//ft_printf("ft_printf output: |%5p|\n", NULL);
+	//printf("printf output:    |%5p|\n", NULL);
+	//ft_printf("ft_printf output: |%2p|\n", NULL);
+	//printf("printf output:    |%2p|\n", NULL);
+	//ft_printf("ft_printf output: |%.p|\n", NULL);
+	//printf("printf output:    |%.p|\n", NULL);
+	//ft_printf("ft_printf output: |%5.p|\n", NULL);
+//	//printf("printf output:    |%5.p|\n", NULL);
+//
+//
+//	//ft_printf("ft_printf output: |%2.9p|\n", 1234);
+	//printf("printf output:    |%2.9p|\n", 1234);
+	//ft_printf("ft_printf output: |%p|\n", 4);
+	//printf("printf output:    |%p|\n", 4);
+	//ft_printf("ft_printf output: |%5p|\n", 14);
+	//printf("printf output:    |%5p|\n", 14);
+	//ft_printf("ft_printf output: |%2p|\n", 3);
+	//printf("printf output:    |%2p|\n", 3);
 	ft_printf("ft_printf output: |%70p|\n", &a);
 	printf("printf output:    |%70p|\n", &a);
+	ft_printf("ft_printf output: |%9.2p|\n", 1234);
+	printf("printf output:    |%9.2p|\n", 1234);
 
 
 	return (0);
