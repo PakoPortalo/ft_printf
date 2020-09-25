@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 12:53:48 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 12:58:14 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_flags		ft_putptr(unsigned long int n, t_flags data)
     char *base;
 	base = "0123456789abcdef";
     if (n >= 16)
-		ft_putptr(n / 16, data);
+		data = ft_putptr(n / 16, data);
 	data.ret = write(1, &base[n %  16], 1);
 	return(data);
 }
