@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptmasterUtils2.c                                :+:      :+:    :+:   */
+/*   ft_ptrmasterUtils2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:26 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 19:37:37 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 13:41:06 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_flags		ft_ptrprinter1(t_flags data)
 {
+		if ((data.width > data.digit) && (data.width > data.precition))
+			data.width -= 2;
 		while ((data.width - data.digit) != 0)
 		{
 			data.ret += write(1, " ", 1);
