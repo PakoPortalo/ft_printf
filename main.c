@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 20:44:25 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 11:39:58 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,8 @@ int		main()
 	//printf("printf output:    |hello, %09s.|\n", "hi low");
 	//ft_printf("ft_printf output: |%.4s|\n", NULL);
 	//printf("printf output:    |%.4s|\n", NULL);
+	ft_printf("ft_printf output: |%-*s|\n", -32);
+	printf("printf output:    |%-*s|\n", -32);
 
 		// TESTS 'c'
 
@@ -290,16 +292,18 @@ int		main()
 	//printf("printf output:    |%5.p|\n", NULL);
 
 
-	ft_printf("ft_printf output: |%2.9p\n|", 1234);
-	printf("printf output:    |%2.9p\n|", 1234);
-	ft_printf("ft_printf output: |%9.2p\n|", 1234);
-	printf("printf output:    |%9.2p\n|", 1234);
-	ft_printf("ft_printf output: |%p|\n", 4);
-	printf("printf output:    |%p|\n", 4);
-	ft_printf("ft_printf output: |%5p|\n", 14);
-	printf("printf output:    |%5p|\n", 14);
-	ft_printf("ft_printf output: |%2p|\n", 3);
-	printf("printf output:    |%2p|\n", 3);
+	//ft_printf("ft_printf output: |%2.9p\n|", 1234);
+	//printf("printf output:    |%2.9p\n|", 1234);
+	//ft_printf("ft_printf output: |%9.2p\n|", 1234);
+	//printf("printf output:    |%9.2p\n|", 1234);
+	//ft_printf("ft_printf output: |%p|\n", 4);
+	//printf("printf output:    |%p|\n", 4);
+	//ft_printf("ft_printf output: |%5p|\n", 14);
+	//printf("printf output:    |%5p|\n", 14);
+	//ft_printf("ft_printf output: |%2p|\n", 3);
+	//printf("printf output:    |%2p|\n", 3);
+	//ft_printf("ft_printf output: |%p|\n", &a);
+	//printf("printf output:    |%p|\n", &a);
 
 
 	return (0);
