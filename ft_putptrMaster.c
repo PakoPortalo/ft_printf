@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 13:17:43 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 13:28:28 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_flags	ft_putptrMaster2(unsigned long n, t_flags data)
 t_flags	ft_putptrMaster(unsigned long n, t_flags data)
 {
 	data.uns = n;
-	if ((n == NULL) && (data.width >= 2))
+	if (data.width >= 2)
 		data.width -= 2;
 	data.digit = ft_ptrDigit(n, data);
 	if (data.minus == 0)
@@ -75,8 +75,7 @@ t_flags	ft_putptrMaster(unsigned long n, t_flags data)
 		data = ft_putptrMaster2(n, data);
 	else
 	{
-		if ((data.precition > data.digit) || (data.width > data.precition) || \
-		((data.precition == 0) && (data.width == 0)))
+		if ((data.precition > data.digit) || (data.width > data.precition) || ((data.precition == 0) && (data.width == 0)))
 			data.ret += write(1, "0x", 2);
 		data = ft_putptr(n, data);
 	}
