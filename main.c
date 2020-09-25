@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 13:48:06 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 14:02:16 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -296,16 +296,16 @@ int		main()
 
 	//ft_printf("ft_printf output: |%2.9p|\n", 1234);
 	//printf("printf output:    |%2.9p|\n", 1234);
-	ft_printf("ft_printf output: |%9.2p|\n", 1234);
-	printf("printf output:    |%9.2p|\n", 1234);
+	//ft_printf("ft_printf output: |%9.2p|\n", 1234);
+	//printf("printf output:    |%9.2p|\n", 1234);
 	//ft_printf("ft_printf output: |%p|\n", 4);
 	//printf("printf output:    |%p|\n", 4);
 	//ft_printf("ft_printf output: |%5p|\n", 14);
 	//printf("printf output:    |%5p|\n", 14);
 	//ft_printf("ft_printf output: |%2p|\n", 3);
 	//printf("printf output:    |%2p|\n", 3);
-	//ft_printf("ft_printf output: |%70p|\n", &a);
-	//printf("printf output:    |%70p|\n", &a);
+	ft_printf("ft_printf output: |%70p|\n", &a);
+	printf("printf output:    |%70p|\n", &a);
 
 
 	return (0);
