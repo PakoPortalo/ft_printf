@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 17:55:15 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:22:17 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 	char strPrecition[100];
 	int i;
 	int j;
+	int variadic;
+
 	i = 0;
 	j = 0;
-
-	//if (ft_strchr("%", format[data.i]))
-	//	data.percentage++;
+	variadic = 0;
 	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
 		data.zero = 1;
 	else if(format[data.i] == '.')
@@ -83,7 +83,15 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 			data.i--;
 		}
 		else if (format[data.i] == '*')
-			data.width = va_arg(ap, int);
+		{
+			variadic = va_arg(ap, int);
+			if (variadic < 0)
+			{
+				variadic = -variadic;
+				data.minus = 1;
+			}
+			data.width = variadic;
+		}
 	}
 	else if (data.isPrecition == 1) // si precition == 1
 	{
@@ -99,7 +107,15 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 			data.i--;
 		}
 		else if (format[data.i] == '*')
-			data.precition = va_arg(ap, int);
+		{
+			variadic = va_arg(ap, int);
+			if (variadic < 0)
+			{
+				variadic = -variadic;
+				data.minus = 1;
+			}
+			data.precition = variadic;
+		}
 	}
 	return(data);
 }

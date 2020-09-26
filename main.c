@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 12:51:45 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:17:14 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,8 +315,10 @@ int		main()
 
 		// TEST mix ae k psa los urtimo tes eso güeno
 
-	ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
-	printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
+	//ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
+	//printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
+	ft_printf("ft_printf output: |%*s|\n", -32, "abc");
+	printf("printf output:    |%*s|\n", -32, "abc");
 
 
 
