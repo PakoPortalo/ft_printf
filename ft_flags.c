@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 13:22:17 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:25:11 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,7 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 		{
 			variadic = va_arg(ap, int);
 			if (variadic < 0)
-			{
-				variadic = -variadic;
-				data.minus = 1;
-			}
-			data.precition = variadic;
+				data.precition = variadic;
 		}
 	}
 	return(data);
