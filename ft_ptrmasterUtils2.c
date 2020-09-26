@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:26 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 12:35:54 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 12:37:50 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_flags		ft_ptrprinter1(unsigned long n, t_flags data)
 {
 		if (((data.isPrecition == 0) || (data.precition == 0)) && (data.width > 2))
 		{
-			if (n != NULL);
+			if (n == NULL);
 				data.width -= 2;
 		}
 		while ((data.width - data.digit) != 0)
