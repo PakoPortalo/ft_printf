@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 13:37:37 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:48:31 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ t_flags	ft_flags(t_flags data, const char *format, va_list ap)
 		else if (format[data.i] == '*')
 		{
 			variadic = va_arg(ap, int);
-			if (variadic > 0)
+			if (variadic >= 0)
 				data.precition = variadic;
 			else
 				data.isPrecition = 0;
