@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 13:17:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:37:58 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -317,8 +317,10 @@ int		main()
 
 	//ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
 	//printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
-	ft_printf("ft_printf output: |%*s|\n", -32, "abc");
-	printf("printf output:    |%*s|\n", -32, "abc");
+	//ft_printf("ft_printf output: |%*s|\n", -32, "abc");
+	//printf("printf output:    |%*s|\n", -32, "abc");
+	ft_printf("ft_printf output: |%.*s|\n", -3, "hello");
+	printf("printf output:    |%.*s|\n", -3, "hello");
 
 
 
