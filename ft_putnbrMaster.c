@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 18:58:40 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:00:46 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_flags	ft_putnbrMaster(int n, t_flags data)
 {
 	data.nbr = n;
 	data.digit = ft_nbrDigit(n, data);
-	if (n < 0)
+	if ((n < 0) && (data.width > 0))
 		data.width--;
 	if (data.minus == 0)
 		data = ft_putnbrMaster1(data);

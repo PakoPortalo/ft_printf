@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:11:24 by pako              #+#    #+#             */
-/*   Updated: 2020/09/23 17:00:15 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:05:50 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_nbrDigit(int n, t_flags data)
 	return (data.digit);
 }
 
-int		ft_putnbr(int n, int ret)
+int		ft_putnbr(long int n, int ret)
 {
 	char		c;
 

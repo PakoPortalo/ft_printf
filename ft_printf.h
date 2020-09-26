@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 09:48:23 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 13:43:30 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:05:58 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_flags
 {
 	int				width;
 	int				precition;
-	int				nbr;
+	long int		nbr;
 	unsigned int	uns;
 	int				digit;
 	int				isPrecition;
@@ -46,7 +46,7 @@ int				ft_atoi(const char *str);
 char			*ft_strchr(const char *s, int c);
 int				ft_isnumber(int n);
 int				ft_nbrDigit(int n, t_flags data);
-int				ft_putnbr(int n, int ret);
+int				ft_putnbr(long int n, int ret);
 t_flags			ft_isNegative(t_flags data);
 t_flags			ft_nbrprecition1(t_flags data);
 t_flags			ft_nbrprecition2(t_flags data);
