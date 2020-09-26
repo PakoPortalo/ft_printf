@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/25 17:15:00 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/25 17:26:14 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ unsigned int		ft_ptrDigit(unsigned int n, t_flags data)
 {
 	unsigned int m;
 
-	if (data.precition > data.width)
+	if (data.precition >= data.width)
 		data.digit = 0;
 	else
 		data.digit = 2;
