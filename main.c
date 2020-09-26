@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 19:27:19 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 19:41:46 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,8 +323,8 @@ int		main()
 	printf("printf output:    |%.*s|\n", -3, "hello");
 	ft_printf("ft_printf output: |%.*s|\n", 0, "hello");
 	printf("printf output:    |%.*s|\n", 0, "hello");
-	ft_printf("ft_printf output: |Hello %-5 World|\n", 0, "hello");
-	printf("printf output:    |Hello %-5 World|\n", 0, "hello");
+	ft_printf("ft_printf output: |Hello %-5 World|\n");
+	printf("printf output:    |Hello %-5 World|\n");
 
 
 	return (0);
