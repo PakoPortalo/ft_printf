@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:40:46 by pako              #+#    #+#             */
-/*   Updated: 2020/09/22 19:20:02 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 13:08:28 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_flags		ft_isNegative(t_flags data) // int n mejor que data.nbr
 {
-	if (data.nbr < 0)
+	if ((data.nbr < 0) && (data.nbr > -2147483648))
 	{
 		data.ret += write(1, "-", 1);
 		data.nbr = -data.nbr;
