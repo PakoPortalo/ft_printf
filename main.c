@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 19:59:06 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 20:10:20 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int		main()
 	ft_printf("Esto es una %0s.\nVamos a ver si podemos imprimir %s.\nOkei, me cago en la play.\n", prueba, empresa);
 
 */
-	int a;
-	int maxilofacial_bb;
+	//int a;
+	//int maxilofacial_bb;
 
-	a = 1;
-	maxilofacial_bb = -2147483648;
+	//a = 1;
+	//maxilofacial_bb = -2147483648;
 
 	// TESTS INTS 'd' AND 'i'
 

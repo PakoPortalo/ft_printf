@@ -6,13 +6,13 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:26 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 19:43:50 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/26 20:12:13 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_flags		ft_ptrprinter1(unsigned long n, t_flags data)
+t_flags		ft_ptrprinter1(t_flags data)
 {
 	if (((data.isPrecition == 0) || (data.precition == 0)) && (data.width >= 2))
 	{
@@ -48,13 +48,13 @@ t_flags		ft_subptrprinter2_1(t_flags data)
 			data.width--;
 		}
 	}
-	data = ft_isNegative(data);
+									//data = ft_isNegative(data);
 	return (data);
 }
 
 t_flags		ft_subptrprinter2_2(t_flags data)
 {
-	data = ft_isNegative(data);
+									//data = ft_isNegative(data);
 	while ((data.width - data.digit) != 0)
 	{
 		data.ret += write(1, "0", 1);
