@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 17:47:58 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 18:10:43 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,14 +323,14 @@ int		main()
 	//printf("printf output:    |%.*s|\n", -3, "hello");
 	//ft_printf("ft_printf output: |%.*s|\n", 0, "hello");
 	//printf("printf output:    |%.*s|\n", 0, "hello");
-	ft_printf("ft_printf output: |Hello %5 World|\n");
-	printf("printf output:    |Hello %5 World|\n");
-	ft_printf("ft_printf output: |Hello %-5 World|\n");
-	printf("printf output:    |Hello %-5 World|\n");
-	ft_printf("%-5\n");
-	printf("%-5\n");
-	ft_printf("%5\n");
-	printf("%5\n");
+	//ft_printf("ft_printf output: |Hello %5 World|\n");
+	//printf("printf output:    |Hello %5 World|\n");
+	//ft_printf("ft_printf output: |Hello %-5 World|\n");
+	//printf("printf output:    |Hello %-5 World|\n");
+	ft_printf("%-5");
+	//printf("%-5\n");
+	//ft_printf("%5\n");
+	//printf("%5\n");
 
 
 	return (0);
