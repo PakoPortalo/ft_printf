@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexmasterUtils1.c                               :+:      :+:    :+:   */
+/*   ft_hexmasterutils1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:20:57 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 13:18:02 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ unsigned int		ft_hexdigit(unsigned int n, t_flags data)
 	return (data.digit);
 }
 
-int		ft_puthex(unsigned int n, t_flags data)
+int					ft_puthex(unsigned int n, t_flags data)
 {
-
 	char			c;
 	unsigned int	h;
 	int				ret;
@@ -47,11 +46,13 @@ int		ft_puthex(unsigned int n, t_flags data)
 		if (n >= 16)
 			ret += ft_puthex((n / 16), data);
 		h = n % 16;
-		if(h > 9)
-			if(data.upperhex == 0)
+		if (h > 9)
+		{
+			if (data.upperhex == 0)
 				c = (h - 10) + 'a';
 			else
 				c = (h - 10) + 'A';
+		}
 		else
 			c = h + '0';
 		ret += write(1, &c, 1);
@@ -59,7 +60,7 @@ int		ft_puthex(unsigned int n, t_flags data)
 	return (ret);
 }
 
-t_flags		ft_subhexprecition2(t_flags data)
+t_flags				ft_subhexprecition2(t_flags data)
 {
 	if (data.precition > data.digit)
 	{
@@ -73,7 +74,7 @@ t_flags		ft_subhexprecition2(t_flags data)
 	return (data);
 }
 
-t_flags		ft_hexprecition1(t_flags data)
+t_flags				ft_hexprecition1(t_flags data)
 {
 	data = ft_isnegative(data);
 	if (data.precition > data.digit)
@@ -87,7 +88,7 @@ t_flags		ft_hexprecition1(t_flags data)
 	return (data);
 }
 
-t_flags		ft_hexprecition2(t_flags data)
+t_flags				ft_hexprecition2(t_flags data)
 {
 	if (data.minus == 0)
 	{
@@ -108,6 +109,5 @@ t_flags		ft_hexprecition2(t_flags data)
 		data = ft_isnegative(data);
 		data = ft_subhexprecition2(data);
 	}
-	return(data);
+	return (data);
 }
-

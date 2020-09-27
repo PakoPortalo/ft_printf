@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptrmasterUtils2.c                               :+:      :+:    :+:   */
+/*   ft_ptrmasterutils2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:26 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:18:24 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 13:25:40 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 t_flags		ft_ptrprinter1(t_flags data)
 {
 	if (((data.isprecition == 0) || (data.precition == 0)) && (data.width >= 2))
-	{
-			data.width -= 2;
-	}
+		data.width -= 2;
 	if (data.width > data.digit)
 	{
 		while ((data.width - data.digit) != 0)
@@ -28,6 +26,7 @@ t_flags		ft_ptrprinter1(t_flags data)
 	}
 	return (data);
 }
+
 t_flags		ft_subptrprinter2_1(t_flags data)
 {
 	while ((data.width - data.digit) != 0)
@@ -60,9 +59,10 @@ t_flags		ft_subptrprinter2_2(t_flags data)
 	}
 	return (data);
 }
+
 t_flags		ft_ptrprinter2(t_flags data)
 {
-if (data.minus == 0)
+	if (data.minus == 0)
 	{
 		if (data.isprecition == 1)
 			data = ft_subptrprinter2_1(data);
@@ -82,5 +82,5 @@ if (data.minus == 0)
 			data.width--;
 		}
 	}
-	return(data);
+	return (data);
 }

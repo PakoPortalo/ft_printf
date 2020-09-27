@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:06:38 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:26:22 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 13:14:58 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ t_flags	ft_hexprecition(t_flags data)
 t_flags	ft_puthexmaster1(t_flags data)
 {
 	if (data.isprecition == 1)
-		data = (data.precition <= data.digit) ? ft_hexprinter(data) : ft_hexprecition(data);
+		data = (data.precition <= data.digit) ? \
+		ft_hexprinter(data) : ft_hexprecition(data);
 	else
 		data = ft_hexprinter(data);
 	return (data);
@@ -59,7 +60,7 @@ t_flags	ft_puthexmaster(unsigned int n, t_flags data)
 	if (data.minus == 0)
 		data = ft_puthexmaster1(data);
 	else
-			data = ft_hexprecition(data);
+		data = ft_hexprecition(data);
 	if ((data.precition == 0) && (data.uns == 0))
 		data = ft_puthexmaster2(data);
 	else

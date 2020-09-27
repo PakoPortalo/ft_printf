@@ -6,17 +6,11 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 13:07:13 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 13:10:25 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-//t_flags		ft_putstr1(char*s, t_flags data, int i)
-//{
-//	int ret
-//
-//}
 
 int			ft_putstr(char *s, t_flags data)
 {
@@ -29,16 +23,16 @@ int			ft_putstr(char *s, t_flags data)
 		{
 			while ((s[i] != '\0') && (data.digit != 0))
 			{
-				data.ret += write(1 , &s[i], 1);
+				data.ret += write(1, &s[i], 1);
 				i++;
 				data.digit--;
 			}
 		}
-		else // ESTO ESTABA SIN CORCHETES TO RARO Y NO ENTIENDO COMO FUNCIONABA
+		else
 		{
 			while (s[i] != '\0')
 			{
-				data.ret += write(1 , &s[i], 1);
+				data.ret += write(1, &s[i], 1);
 				i++;
 				data.precition--;
 			}
@@ -85,7 +79,8 @@ t_flags		ft_putstrmaster(char *s, t_flags data)
 		s = "(null)";
 	data = ft_strdigit(s, data);
 	if (data.isprecition == 1)
-		data.digit = (data.precition < data.digit) ? data.precition : data.digit;
+		data.digit = (data.precition < data.digit) ? \
+		data.precition : data.digit;
 	if (data.minus == 0)
 		data = ft_strprinter(data);
 	data.ret = ft_putstr(s, data);
