@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 17:11:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 17:16:41 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ t_flags				ft_subhexprecition2(t_flags data)
 
 t_flags				ft_hexprecition1(t_flags data)
 {
-												//data = ft_isnegative(data);
 	if (data.precition > data.digit)
 	{
 		while ((data.precition - data.digit) != 0)
@@ -97,7 +96,6 @@ t_flags				ft_hexprecition2(t_flags data)
 			data.ret += write(1, " ", 1);
 			data.width--;
 		}
-												//data = ft_isnegative(data);
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -105,9 +103,6 @@ t_flags				ft_hexprecition2(t_flags data)
 		}
 	}
 	else if (data.minus == 1)
-	{
-												//data = ft_isnegative(data);
 		data = ft_subhexprecition2(data);
-	}
 	return (data);
 }

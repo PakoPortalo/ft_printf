@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:01:02 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 17:13:25 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 17:15:53 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,11 @@ t_flags		ft_subunsprinter2_1(t_flags data)
 			data.width--;
 		}
 	}
-											//data = ft_isnegative(data);
 	return (data);
 }
 
 t_flags		ft_subunsprinter2_2(t_flags data)
 {
-											//data = ft_isnegative(data);
 	while ((data.width - data.digit) != 0)
 	{
 		data.ret += write(1, "0", 1);
