@@ -6,15 +6,15 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:11:24 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:32:29 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:44:23 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_nbrdigit(int n, t_flags data)
+int			ft_nbrdigit(int n, t_flags data)
 {
-	int m;
+	int		m;
 
 	data.digit = 0;
 	m = n;
@@ -31,9 +31,9 @@ int		ft_nbrdigit(int n, t_flags data)
 	return (data.digit);
 }
 
-int		ft_putnbr(int n, int ret)
+int			ft_putnbr(int n, int ret)
 {
-	char		c;
+	char	c;
 
 	if (n == 0)
 		ret += write(1, "0", 1);
@@ -107,5 +107,5 @@ t_flags		ft_nbrprecition2(t_flags data)
 		data = ft_isnegative(data);
 		data = ft_subnbrprecition2(data);
 	}
-	return(data);
+	return (data);
 }

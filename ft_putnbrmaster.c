@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:40:44 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:26:50 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:40:13 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ t_flags	ft_nbrprecition(t_flags data)
 t_flags	ft_putnbrmaster1(t_flags data)
 {
 	if (data.isprecition == 1)
-		data = (data.precition <= data.digit) ? ft_nbrprinter(data) : ft_nbrprecition(data);
+		data = (data.precition <= data.digit) ? \
+		ft_nbrprinter(data) : ft_nbrprecition(data);
 	else
 		data = ft_nbrprinter(data);
 	return (data);
@@ -61,7 +62,7 @@ t_flags	ft_putnbrmaster(int n, t_flags data)
 	if (data.minus == 0)
 		data = ft_putnbrmaster1(data);
 	else
-			data = ft_nbrprecition(data);
+		data = ft_nbrprecition(data);
 	if ((data.precition == 0) && (data.nbr == 0))
 		data = ft_putnbrmaster2(data);
 	else

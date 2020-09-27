@@ -6,15 +6,15 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:00:38 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:28:59 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:43:28 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int		ft_unsdigit(unsigned int n, t_flags data)
+unsigned int				ft_unsdigit(unsigned int n, t_flags data)
 {
-	unsigned int m;
+	unsigned int			m;
 
 	data.digit = 0;
 	m = n;
@@ -31,9 +31,9 @@ unsigned int		ft_unsdigit(unsigned int n, t_flags data)
 	return (data.digit);
 }
 
-unsigned int	ft_putuns(unsigned int n, int ret)
+unsigned int				ft_putuns(unsigned int n, int ret)
 {
-	char		c;
+	char					c;
 
 	if (n == 0)
 		ret += write(1, "0", 1);
@@ -47,7 +47,7 @@ unsigned int	ft_putuns(unsigned int n, int ret)
 	return (ret);
 }
 
-t_flags		ft_subunsprecition2(t_flags data)
+t_flags						ft_subunsprecition2(t_flags data)
 {
 	if (data.precition > data.digit)
 	{
@@ -61,7 +61,7 @@ t_flags		ft_subunsprecition2(t_flags data)
 	return (data);
 }
 
-t_flags		ft_unsprecition1(t_flags data)
+t_flags						ft_unsprecition1(t_flags data)
 {
 	data = ft_isnegative(data);
 	if (data.precition > data.digit)
@@ -75,7 +75,7 @@ t_flags		ft_unsprecition1(t_flags data)
 	return (data);
 }
 
-t_flags		ft_unsprecition2(t_flags data)
+t_flags						ft_unsprecition2(t_flags data)
 {
 	if (data.minus == 0)
 	{
@@ -96,5 +96,5 @@ t_flags		ft_unsprecition2(t_flags data)
 		data = ft_isnegative(data);
 		data = ft_subunsprecition2(data);
 	}
-	return(data);
+	return (data);
 }

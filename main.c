@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 10:49:49 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:55:06 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,59 +164,59 @@ int		main()
 
 		// TESTS 's'
 
-	//ft_printf("ft printf output: |%s|\n", "Calabazon");
-	//printf("printf output:    |%s|\n", "Calabazon");
-	//ft_printf("ft printf output: |%5s|\n", "Ole");
-	//printf("printf output:    |%5s|\n", "Ole");
-	//ft_printf("ft printf output: |%-5s|\n", "iou");
-	//printf("printf output:    |%-5s|\n", "iou");
-	//ft_printf("ft printf output: |%s|\n", "Calabazon");
-	//printf("printf output:    |%s|\n", "Calabazon");
-	//ft_printf("ft printf output: |%.5s|\n", "Calabazon");
-	//printf("printf output:    |%.5s|\n", "Calabazon");
-	//ft_printf("ft printf output: |%10.5s|\n", "Calabazon");
-	//printf("printf output:    |%10.5s|\n", "Calabazon");
-	//ft_printf("ft printf output: |%-10.5s|\n", "Calabazon");
-	//printf("printf output:    |%-10.5s|\n", "Calabazon");
-	//ft_printf("ft printf output: |%3.5s|\n", "Calabazon");
-	//printf("printf output:    |%3.5s|\n\n", "Calabazon");
-	//ft_printf("ft printf output: |%3.6s|\n", "Calabazon");
-	//printf("printf output:    |%3.6s|\n\n", "Calabazon");
-	//ft_printf("ft printf output: |%7.5s|\n", "Calabazon");
-	//printf("printf output:    |%7.5s|\n\n", "Calabazon");
-	//ft_printf("ft printf output: |%11.5s|\n", "Calabazon");
-	//printf("printf output:    |%11.5s|\n\n", "Calabazon");
-	//ft_printf("ft printf output: |%-11.5s|\n", "Calabazon");
-	//printf("printf output:    |%-11.5s|\n\n", "Calabazon");
+	ft_printf("ft printf output: |%s|\n", "Calabazon");
+	printf("printf output:    |%s|\n", "Calabazon");
+	ft_printf("ft printf output: |%5s|\n", "Ole");
+	printf("printf output:    |%5s|\n", "Ole");
+	ft_printf("ft printf output: |%-5s|\n", "iou");
+	printf("printf output:    |%-5s|\n", "iou");
+	ft_printf("ft printf output: |%s|\n", "Calabazon");
+	printf("printf output:    |%s|\n", "Calabazon");
+	ft_printf("ft printf output: |%.5s|\n", "Calabazon");
+	printf("printf output:    |%.5s|\n", "Calabazon");
+	ft_printf("ft printf output: |%10.5s|\n", "Calabazon");
+	printf("printf output:    |%10.5s|\n", "Calabazon");
+	ft_printf("ft printf output: |%-10.5s|\n", "Calabazon");
+	printf("printf output:    |%-10.5s|\n", "Calabazon");
+	ft_printf("ft printf output: |%3.5s|\n", "Calabazon");
+	printf("printf output:    |%3.5s|\n\n", "Calabazon");
+	ft_printf("ft printf output: |%3.6s|\n", "Calabazon");
+	printf("printf output:    |%3.6s|\n\n", "Calabazon");
+	ft_printf("ft printf output: |%7.5s|\n", "Calabazon");
+	printf("printf output:    |%7.5s|\n\n", "Calabazon");
+	ft_printf("ft printf output: |%11.5s|\n", "Calabazon");
+	printf("printf output:    |%11.5s|\n\n", "Calabazon");
+	ft_printf("ft printf output: |%-11.5s|\n", "Calabazon");
+	printf("printf output:    |%-11.5s|\n\n", "Calabazon");
 
-	//ft_printf("ft printf output: |%10.3s|\n", "perro");
-	//printf("printf output:    |%10.3s|\n", "perro");	//width > digit > precition
-	//ft_printf("ft printf output: |%10.7s|\n", "perro");
-	//printf("printf output:    |%10.7s|\n", "perro");	//width > precition > digit
-	//ft_printf("ft printf output: |%3.10s|\n", "perro");
-	//printf("printf output:    |%3.10s|\n", "perro");	//precition > digit > width
-	//ft_printf("ft printf output: |%7.10s|\n", "perro");
-	//printf("printf output:    |%7.10s|\n", "perro");	//precition > width > digit
-	//ft_printf("ft printf output: |%3.7s|\n", "calabazone");
-	//printf("printf output:    |%3.7s|\n", "calabazone");	//digit > precition > width
-	//ft_printf("ft printf output: |%7.3s|\n", "calabazone");
-	//printf("printf output:    |%7.3s|\n", "calabazone");	//digit > width > precition
-	//ft_printf("ft_printf output: |Hello, %s|\n", "Gavin");
-	//printf("printf output:    |Hello, %s|\n", "Gavin");
-	//ft_printf("ft_printf output: |%s|\n", "Gavin");
-	//printf("printf output:    |%s|\n", "Gavin");
-	//ft_printf("ft_printf output: |%32s|\n", "abc");
-	//printf("printf output:    |%32s|\n", "abc");
-	//ft_printf("ft_printf output: |%.5s%7s|\n", "yo", "boi");
-	//printf("printf output:    |%.5s%7s|\n", "yo", "boi");
-	//ft_printf("ft_printf output: |hello, %s.|\n", NULL);
-	//printf("printf output:    |hello, %s.|\n", NULL);
-	//ft_printf("ft_printf output: |hello, %09s.|\n", "hi low");
-	//printf("printf output:    |hello, %09s.|\n", "hi low");
-	//ft_printf("ft_printf output: |%.4s|\n", NULL);
-	//printf("printf output:    |%.4s|\n", NULL);
-	//ft_printf("ft_printf output: |%-*s|\n", -32);
-	//printf("printf output:    |%-*s|\n", -32);
+	ft_printf("ft printf output: |%10.3s|\n", "perro");
+	printf("printf output:    |%10.3s|\n", "perro");	//width > digit > precition
+	ft_printf("ft printf output: |%10.7s|\n", "perro");
+	printf("printf output:    |%10.7s|\n", "perro");	//width > precition > digit
+	ft_printf("ft printf output: |%3.10s|\n", "perro");
+	printf("printf output:    |%3.10s|\n", "perro");	//precition > digit > width
+	ft_printf("ft printf output: |%7.10s|\n", "perro");
+	printf("printf output:    |%7.10s|\n", "perro");	//precition > width > digit
+	ft_printf("ft printf output: |%3.7s|\n", "calabazone");
+	printf("printf output:    |%3.7s|\n", "calabazone");	//digit > precition > width
+	ft_printf("ft printf output: |%7.3s|\n", "calabazone");
+	printf("printf output:    |%7.3s|\n", "calabazone");	//digit > width > precition
+	ft_printf("ft_printf output: |Hello, %s|\n", "Gavin");
+	printf("printf output:    |Hello, %s|\n", "Gavin");
+	ft_printf("ft_printf output: |%s|\n", "Gavin");
+	printf("printf output:    |%s|\n", "Gavin");
+	ft_printf("ft_printf output: |%32s|\n", "abc");
+	printf("printf output:    |%32s|\n", "abc");
+	ft_printf("ft_printf output: |%.5s%7s|\n", "yo", "boi");
+	printf("printf output:    |%.5s%7s|\n", "yo", "boi");
+	ft_printf("ft_printf output: |hello, %s.|\n", NULL);
+	printf("printf output:    |hello, %s.|\n", NULL);
+	ft_printf("ft_printf output: |hello, %09s.|\n", "hi low");
+	printf("printf output:    |hello, %09s.|\n", "hi low");
+	ft_printf("ft_printf output: |%.4s|\n", NULL);
+	printf("printf output:    |%.4s|\n", NULL);
+	ft_printf("ft_printf output: |%-*s|\n", -32);
+	printf("printf output:    |%-*s|\n", -32);
 
 		// TESTS 'c'
 
