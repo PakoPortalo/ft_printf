@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsmasterUtils1.c                               :+:      :+:    :+:   */
+/*   ft_hexmasterUtils1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 12:00:38 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 12:27:03 by pako             ###   ########.fr       */
+/*   Created: 2020/09/24 13:07:44 by pako              #+#    #+#             */
+/*   Updated: 2020/09/27 12:20:57 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int		ft_unsDigit(unsigned int n, t_flags data)
+unsigned int		ft_hexdigit(unsigned int n, t_flags data)
 {
 	unsigned int m;
 
@@ -24,30 +24,42 @@ unsigned int		ft_unsDigit(unsigned int n, t_flags data)
 	{
 		while (m != 0)
 		{
-			m = m / 10;
+			m = m / 16;
 			data.digit++;
 		}
 	}
 	return (data.digit);
 }
 
-unsigned int	ft_putuns(unsigned int n, int ret)
+int		ft_puthex(unsigned int n, t_flags data)
 {
-	char		c;
 
+	char			c;
+	unsigned int	h;
+	int				ret;
+
+	ret = 0;
+	h = 0;
 	if (n == 0)
 		ret += write(1, "0", 1);
 	else if (n)
 	{
-		if (n > 9)
-			ret = ft_putuns((n / 10), ret);
-		c = (n % 10) + '0';
+		if (n >= 16)
+			ret += ft_puthex((n / 16), data);
+		h = n % 16;
+		if(h > 9)
+			if(data.upperhex == 0)
+				c = (h - 10) + 'a';
+			else
+				c = (h - 10) + 'A';
+		else
+			c = h + '0';
 		ret += write(1, &c, 1);
 	}
 	return (ret);
 }
 
-t_flags		ft_subunsprecition2(t_flags data)
+t_flags		ft_subhexprecition2(t_flags data)
 {
 	if (data.precition > data.digit)
 	{
@@ -61,9 +73,9 @@ t_flags		ft_subunsprecition2(t_flags data)
 	return (data);
 }
 
-t_flags		ft_unsprecition1(t_flags data)
+t_flags		ft_hexprecition1(t_flags data)
 {
-	data = ft_isNegative(data);
+	data = ft_isnegative(data);
 	if (data.precition > data.digit)
 	{
 		while ((data.precition - data.digit) != 0)
@@ -75,7 +87,7 @@ t_flags		ft_unsprecition1(t_flags data)
 	return (data);
 }
 
-t_flags		ft_unsprecition2(t_flags data)
+t_flags		ft_hexprecition2(t_flags data)
 {
 	if (data.minus == 0)
 	{
@@ -84,7 +96,7 @@ t_flags		ft_unsprecition2(t_flags data)
 			data.ret += write(1, " ", 1);
 			data.width--;
 		}
-		data = ft_isNegative(data);
+		data = ft_isnegative(data);
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -93,8 +105,9 @@ t_flags		ft_unsprecition2(t_flags data)
 	}
 	else if (data.minus == 1)
 	{
-		data = ft_isNegative(data);
-		data = ft_subunsprecition2(data);
+		data = ft_isnegative(data);
+		data = ft_subhexprecition2(data);
 	}
 	return(data);
 }
+

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrMaster.c                                  :+:      :+:    :+:   */
+/*   ft_putstrmaster.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 10:42:59 by pako              #+#    #+#             */
-/*   Updated: 2020/09/24 09:29:32 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:27:52 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_putstr(char *s, t_flags data)
 	i = 0;
 	if (s)
 	{
-		if (data.isPrecition == 1)
+		if (data.isprecition == 1)
 		{
 			while ((s[i] != '\0') && (data.digit != 0))
 			{
@@ -41,7 +41,7 @@ int		ft_putstr(char *s, t_flags data)
 	return(ret);
 }
 
-t_flags		ft_strDigit(char *s, t_flags data)
+t_flags		ft_strdigit(char *s, t_flags data)
 {
 	data.digit = 0;
 	while (s[data.digit] != '\0')
@@ -49,7 +49,7 @@ t_flags		ft_strDigit(char *s, t_flags data)
 	return(data);
 }
 
-t_flags		ft_strPrinter(t_flags data)
+t_flags		ft_strprinter(t_flags data)
 {
 	if (data.width > data.digit)
 	{
@@ -75,7 +75,7 @@ t_flags		ft_strPrinter(t_flags data)
 
 //t_flags		ft_strprecition(t_flags data)
 
-t_flags		ft_putstrMaster(char *s, t_flags data)
+t_flags		ft_putstrmaster(char *s, t_flags data)
 {
 	if (s == NULL)
 	{
@@ -83,13 +83,13 @@ t_flags		ft_putstrMaster(char *s, t_flags data)
 		//	data.precition = 0;
 		s = "(null)";
 	}
-	data = ft_strDigit(s, data);
-	if (data.isPrecition == 1)
+	data = ft_strdigit(s, data);
+	if (data.isprecition == 1)
 		data.digit = (data.precition < data.digit) ? data.precition : data.digit;
 	if (data.minus == 0)
-		data = ft_strPrinter(data);
+		data = ft_strprinter(data);
 	data.ret += ft_putstr(s, data);
 	if (data.minus == 1)
-		data = ft_strPrinter(data);
+		data = ft_strprinter(data);
 	return(data);
 }

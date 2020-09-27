@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrmasterUtils1.c                               :+:      :+:    :+:   */
+/*   ft_ptrmasterutils1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 17:11:24 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 13:52:43 by pako             ###   ########.fr       */
+/*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
+/*   Updated: 2020/09/27 12:25:20 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_nbrDigit(int n, t_flags data)
+unsigned int		ft_ptrdigit(unsigned int n, t_flags data)
 {
-	int m;
+	unsigned int m;
 
-	data.digit = 0;
+	if (data.precition >= data.width)
+		data.digit = 0;
+	else
+		data.digit = 2;
 	m = n;
 	if (m == 0)
 		return (1);
@@ -24,41 +27,24 @@ int		ft_nbrDigit(int n, t_flags data)
 	{
 		while (m != 0)
 		{
-			m = m / 10;
+			m = m / 16;
 			data.digit++;
 		}
 	}
 	return (data.digit);
 }
 
-int		ft_putnbr(int n, int ret)
+t_flags		ft_putptr(unsigned long int n, t_flags data)
 {
-	char		c;
-
-	if (n == 0)
-		ret += write(1, "0", 1);
-	else if (n)
-	{
-		if (n < 0)
-		{
-			ret += write(1, "-", 1);
-			if (n == -2147483648)
-			{
-				ret += write(1, "2", 1);
-				n *= -1;
-				n = n % 1000000000;
-			}
-			n *= -1;
-		}
-		if (n > 9)
-			ret = ft_putnbr((n / 10), ret);
-		c = (n % 10) + '0';
-		ret += write(1, &c, 1);
-	}
-	return (ret);
+    char *base;
+	base = "0123456789abcdef";
+    if (n >= 16)
+		data = ft_putptr(n / 16, data);
+	data.ret += write(1, &base[n %  16], 1);
+	return(data);
 }
 
-t_flags		ft_subnbrprecition2(t_flags data)
+t_flags		ft_subptrprecition2(t_flags data)
 {
 	if (data.precition > data.digit)
 	{
@@ -72,11 +58,11 @@ t_flags		ft_subnbrprecition2(t_flags data)
 	return (data);
 }
 
-t_flags		ft_nbrprecition1(t_flags data)
+t_flags		ft_ptrprecition1(t_flags data)
 {
-	data = ft_isNegative(data);
 	if (data.precition > data.digit)
 	{
+		data.ret += write(1, "0x", 2);
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -86,7 +72,7 @@ t_flags		ft_nbrprecition1(t_flags data)
 	return (data);
 }
 
-t_flags		ft_nbrprecition2(t_flags data)
+t_flags		ft_ptrprecition2(t_flags data)
 {
 	if (data.minus == 0)
 	{
@@ -95,7 +81,6 @@ t_flags		ft_nbrprecition2(t_flags data)
 			data.ret += write(1, " ", 1);
 			data.width--;
 		}
-		data = ft_isNegative(data);
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -103,9 +88,7 @@ t_flags		ft_nbrprecition2(t_flags data)
 		}
 	}
 	else if (data.minus == 1)
-	{
-		data = ft_isNegative(data);
-		data = ft_subnbrprecition2(data);
-	}
+		data = ft_subptrprecition2(data);
 	return(data);
 }
+

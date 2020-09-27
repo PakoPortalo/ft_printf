@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptrMaster.c                                  :+:      :+:    :+:   */
+/*   ft_putptrmaster.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:29:14 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 20:09:56 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:30:02 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,26 @@ t_flags	ft_ptrprecition(t_flags data)
 	return (data);
 }
 
-t_flags	ft_putptrMaster1(t_flags data)
+t_flags	ft_putptrmaster1(t_flags data)
 {
-	if (data.isPrecition == 1)
+	if (data.isprecition == 1)
 		data = (data.precition <= data.digit) ? ft_ptrprinter(data) : ft_ptrprecition(data);
 	else
 		data = ft_ptrprinter(data);
 	return (data);
 }
 
-t_flags	ft_putptrMaster2(unsigned long n, t_flags data)
+t_flags	ft_putptrmaster2(unsigned long n, t_flags data)
 {
 	{
-		if ((data.isPrecition == 1) && (data.width > 0))
+		if ((data.isprecition == 1) && (data.width > 0))
 		{
 			data.ret += write(1, " ", 1);
 			data.ret += write(1, "0x", 2);
 		}
-		else if((data.isPrecition == 1) && (data.width == 0))
+		else if((data.isprecition == 1) && (data.width == 0))
 			data.ret += write(1, "0x", 2);
-		else if (data.isPrecition == 0)
+		else if (data.isprecition == 0)
 		{
 			data.ret += write(1, "0x", 2);
 			data = ft_putptr(n, data);
@@ -61,16 +61,16 @@ t_flags	ft_putptrMaster2(unsigned long n, t_flags data)
 	return (data);
 }
 
-t_flags	ft_putptrMaster(unsigned long n, t_flags data)
+t_flags	ft_putptrmaster(unsigned long n, t_flags data)
 {
 	data.uns = n;
-	data.digit = ft_ptrDigit(n, data);
+	data.digit = ft_ptrdigit(n, data);
 	if (data.minus == 0)
-		data = ft_putptrMaster1(data);
+		data = ft_putptrmaster1(data);
 	else
 			data = ft_ptrprecition(data);
 	if ((data.precition == 0) && (data.uns == 0))
-		data = ft_putptrMaster2(n, data);
+		data = ft_putptrmaster2(n, data);
 	else
 	{
 		if ((data.precition > data.digit) || (data.width > data.precition) || ((data.precition == 0) && (data.width == 0)))

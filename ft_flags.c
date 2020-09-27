@@ -6,116 +6,91 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 10:19:00 by pako              #+#    #+#             */
-/*   Updated: 2020/09/26 13:51:48 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 12:11:35 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_isnumber(int n)
+int					ft_isnumber(int n)
 {
-	if((n >= '0') && (n <= '9'))
-		return(1);
+	if ((n >= '0') && (n <= '9'))
+		return (1);
 	else
-		return(0);
-	return(0);
+		return (0);
+	return (0);
 }
 
-t_flags	ft_resetflags(void)
+t_flags				ft_w(t_flags d, const char *f, va_list ap, char *str)
 {
-	t_flags data;
-	data.width = 0;
-	data.minus = 0;
-	data.digit = 0;
-	data.precition = 0;
-	data.upperHex = 0;
-	data.nbr = 0;
-	data.uns = 0;
-	data.isPrecition = 0;
-	data.zero = 0;
-	data.i = 0;
-	data.ret = 0;
-	return(data);
-}
-
-t_flags	ft_keepresetflags(t_flags data)
-{
-	data.width = 0;
-	data.minus = 0;
-	data.digit = 0;
-	data.precition = 0;
-	data.upperHex = 0;
-	data.nbr = 0;
-	data.uns = 0;
-	data.isPrecition = 0;
-	data.zero = 0;
-	return(data);
-}
-
-t_flags	ft_flags(t_flags data, const char *format, va_list ap)
-{
-	char strWidth[100];
-	char strPrecition[100];
 	int i;
-	int j;
-	int variadic;
 
 	i = 0;
-	j = 0;
-	variadic = 0;
-	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
-		data.zero = 1;
-	else if(format[data.i] == '.')
-		data.isPrecition = 1;
-	else if (format[data.i] == '-')
-		data.minus = 1;
-	else if (data.isPrecition == 0)		//Width
+	if (ft_strchr("0123456789", f[d.i]))
 	{
-		if (ft_strchr("0123456789", format[data.i]))
+		while (ft_strchr("0123456789", f[d.i]))
 		{
-			while (ft_strchr("0123456789", format[data.i]))
-			{
-				strWidth[i] = format[data.i];
-				i++;
-				data.i++;
-			}
-			data.width = ft_atoi(strWidth);
-			data.i--;
+			str[i] = f[d.i];
+			i++;
+			d.i++;
 		}
-		else if (format[data.i] == '*')
-		{
-			variadic = va_arg(ap, int);
-			if (variadic < 0)
-			{
-				variadic = -variadic;
-				data.minus = 1;
-			}
-			data.width = variadic;
-		}
+		d.width = ft_atoi(str);
+		d.i--;
 	}
-	else if (data.isPrecition == 1) // si precition == 1
+	else if (f[d.i] == '*')
 	{
-		if(ft_strchr("0123456789", format[data.i]))
+		d.variadic = va_arg(ap, int);
+		if (d.variadic < 0)
 		{
-			while (ft_strchr("0123456789", format[data.i]))
-			{
-				strPrecition[j] = format[data.i];
-				j++;
-				data.i++;
-			}
-			data.precition = ft_atoi(strPrecition);
-			data.i--;
+			d.variadic = -d.variadic;
+			d.minus = 1;
 		}
-		else if (format[data.i] == '*')
-		{
-			variadic = va_arg(ap, int);
-			if (variadic >= 0)
-				data.precition = variadic;
-			else
-				data.isPrecition = 0;
-		}
+		d.width = d.variadic;
 	}
-	return(data);
+	return (d);
 }
 
+t_flags				ft_p(t_flags d, const char *f, va_list ap, char *str)
+{
+	int i;
 
+	i = 0;
+	if (ft_strchr("0123456789", f[d.i]))
+	{
+		while (ft_strchr("0123456789", f[d.i]))
+		{
+			str[i] = f[d.i];
+			i++;
+			d.i++;
+		}
+		d.precition = ft_atoi(str);
+		d.i--;
+	}
+	else if (f[d.i] == '*')
+	{
+		d.variadic = va_arg(ap, int);
+		if (d.variadic >= 0)
+			d.precition = d.variadic;
+		else
+			d.isprecition = 0;
+	}
+	return (d);
+}
+
+t_flags				ft_flags(t_flags data, const char *format, va_list ap)
+{
+	char	strwidth[12];
+	char	strprecition[12];
+
+	if (ft_strchr("%", format[data.i - 1]) && (ft_strchr("0", format[data.i])))
+		data.zero = 1;
+	else if (format[data.i] == '.')
+		data.isprecition = 1;
+	else if (format[data.i] == '-')
+		data.minus = 1;
+	else if (data.isprecition == 0)
+		data = ft_w(data, format, ap, strwidth);
+	else if (data.isprecition == 1)
+		data = ft_p(data, format, ap, strprecition);
+	return (data);
+}

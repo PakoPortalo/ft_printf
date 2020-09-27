@@ -6,7 +6,7 @@
 #    By: pako <pako@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 10:36:02 by pako              #+#    #+#              #
-#    Updated: 2020/09/26 20:06:23 by pako             ###   ########.fr        #
+#    Updated: 2020/09/27 12:19:19 by pako             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,11 @@ FLAGS = -Wall -Werror -Wextra
 CC = gcc
 
 
-SRC = 	ft_printf.c ft_flags.c ft_variable_channel.c ft_putnbrMaster.c ft_putcharMaster.c \
-		ft_putstrMaster.c ft_atoi.c ft_strchr.c ft_nbrmasterUtils1.c ft_nbrmasterUtils2.c \
-		ft_putunsMaster.c ft_unsmasterUtils1.c ft_unsmasterUtils2.c ft_puthexMaster.c \
-		ft_hexmasterUtils1.c ft_hexmasterUtils2.c ft_putptrMaster.c ft_ptrmasterUtils1.c \
-		ft_ptrmasterUtils2.c
+SRC = 	ft_printf.c ft_flags.c ft_variable_channel.c ft_putnbrmaster.c ft_putcharmaster.c \
+		ft_putstrmaster.c ft_atoi.c ft_strchr.c ft_nbrmasterutils1.c ft_nbrmasterutils2.c \
+		ft_putunsmaster.c ft_unsmasterutils1.c ft_unsmasterutils2.c ft_puthexmaster.c \
+		ft_hexmasterutils1.c ft_hexmasterutils2.c ft_putptrmaster.c ft_ptrmasterutils1.c \
+		ft_ptrmasterutils2.c ft_resetflags.c
 
 OBJ = $(SRC:.c=.o)
 
