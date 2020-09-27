@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:00:38 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 12:43:28 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 17:13:09 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_flags						ft_subunsprecition2(t_flags data)
 
 t_flags						ft_unsprecition1(t_flags data)
 {
-	data = ft_isnegative(data);
+										//data = ft_isnegative(data);
 	if (data.precition > data.digit)
 	{
 		while ((data.precition - data.digit) != 0)
@@ -84,7 +84,7 @@ t_flags						ft_unsprecition2(t_flags data)
 			data.ret += write(1, " ", 1);
 			data.width--;
 		}
-		data = ft_isnegative(data);
+											//data = ft_isnegative(data);
 		while ((data.precition - data.digit) != 0)
 		{
 			data.ret += write(1, "0", 1);
@@ -93,7 +93,7 @@ t_flags						ft_unsprecition2(t_flags data)
 	}
 	else if (data.minus == 1)
 	{
-		data = ft_isnegative(data);
+											//data = ft_isnegative(data);
 		data = ft_subunsprecition2(data);
 	}
 	return (data);
