@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 17:52:43 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/27 17:53:38 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int ft_printf(const char *format, ...)
 			//		data.ret += write(1, &format[data.i], 1);
 			//}
 		}
-		if (format[data.i] != '\0')
+		if (format[data.i + 1] != '\0')
 			data.i++;
 	}
 	return (data.ret);
