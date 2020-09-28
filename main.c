@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 18:25:17 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/28 09:37:24 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int		main()
 
 */
 	//int a;
-	//int maxilofacial_bb;
+	int maxilofacial_bb;
 
 	//a = 1;
-	//maxilofacial_bb = -2147483648;
+	maxilofacial_bb = -2147483648;
 
 	// TESTS INTS 'd' AND 'i'
 
@@ -315,19 +315,19 @@ int		main()
 
 		// TEST mix ae k psa los urtimo tes eso güeno
 
-	//ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
-	//printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
-	//ft_printf("ft_printf output: |%*s|\n", -32, "abc");
-	//printf("printf output:    |%*s|\n", -32, "abc");
-	//ft_printf("ft_printf output: |%.*s|\n", -3, "hello");
-	//printf("printf output:    |%.*s|\n", -3, "hello");
-	//ft_printf("ft_printf output: |%.*s|\n", 0, "hello");
-	//printf("printf output:    |%.*s|\n", 0, "hello");
-	//ft_printf("ft_printf output: |Hello %5 World|\n");
-	//printf("printf output:    |Hello %5 World|\n");
-	//ft_printf("ft_printf output: |Hello %-5 World|\n");
-	//printf("printf output:    |Hello %-5 World|\n");
-	ft_printf("%-5");
+	ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
+	printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
+	ft_printf("ft_printf output: |%*s|\n", -32, "abc");
+	printf("printf output:    |%*s|\n", -32, "abc");
+	ft_printf("ft_printf output: |%.*s|\n", -3, "hello");
+	printf("printf output:    |%.*s|\n", -3, "hello");
+	ft_printf("ft_printf output: |%.*s|\n", 0, "hello");
+	printf("printf output:    |%.*s|\n", 0, "hello");
+	ft_printf("ft_printf output: |Hello %5 World|\n");
+	printf("printf output:    |Hello %5 World|\n");
+	ft_printf("ft_printf output: |Hello %-5 World|\n");
+	printf("printf output:    |Hello %-5 World|\n");
+	//ft_printf("%-5");
 	//printf("%-5\n");
 	//ft_printf("%5\n");
 	//printf("%5\n");
