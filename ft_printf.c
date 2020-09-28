@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/09/28 09:48:05 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/28 09:48:53 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_flags		ft_printf1(const char *format, t_flags data, va_list ap)
 {
+	data = ft_keepresetflags(data);
+	data.i++;
 	while (ft_strchr("-0.*123456789", format[data.i]))
 	{
 		data = ft_flags(data, format, ap);
@@ -21,6 +23,13 @@ t_flags		ft_printf1(const char *format, t_flags data, va_list ap)
 			data.i++;
 		else
 			break ;
+	}
+	if (ft_strchr("%cspdiuxX", format[data.i]))
+		data = ft_varchannel(format, ap, data);
+	else
+	{
+		if (format[data.i])
+			data.ret += write(1, &format[data.i], 1);
 	}
 	return (data);
 }
