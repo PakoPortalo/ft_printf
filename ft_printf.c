@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 17:37:43 by pako              #+#    #+#             */
-/*   Updated: 2020/09/28 09:43:50 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/28 09:46:57 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ t_flags		ft_printf1(const char *format, t_flags data, va_list ap)
 		if (format[data.i])
 			data.ret += write(1, &format[data.i], 1);
 	}
+	if (format[data.i] != '\0')
+		data.i++;
 	return (data);
 }
 
@@ -49,8 +51,6 @@ int			ft_printf(const char *format, ...)
 			data.i++;
 			data = ft_printf1(format, data, ap);
 		}
-		if (format[data.i] != '\0')
-			data.i++;
 	}
 	va_end(ap);
 	return (data.ret);
