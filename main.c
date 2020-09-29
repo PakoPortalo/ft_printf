@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/29 18:59:14 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/29 19:09:33 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -336,10 +336,12 @@ int		main()
 	//printf("printf output:    |%-3.4d|\n", 1);
 	//ft_printf("ft_printf output: |%-15.p|\n", NULL);
 	//printf("printf output:    |%-15.p|\n", NULL);
-	ft_printf("ft_printf output: |%-15.p|\n", 0);
-	printf("printf output:    |%-15.p|\n", 0);
-	ft_printf("ft_printf output: |%-2.p|\n", 0);
-	printf("printf output:    |%-2.p|\n", 0);
+	//ft_printf("ft_printf output: |%-15.p|\n", 0);
+	//printf("printf output:    |%-15.p|\n", 0);
+	//ft_printf("ft_printf output: |%-2.p|\n", 0);
+	//printf("printf output:    |%-2.p|\n", 0);
+	ft_printf("ft_printf output: |%1.p|\n", 0);
+	printf("printf output:    |%1.p|\n", 0);
 	//ft_printf("ft_printf output: |%0*%|\n", -3);
 	//printf("printf output:    |%0*%|\n", -3);
 	//ft_printf("ft_printf output: |%0*.%|\n", -4);
