@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:00:38 by pako              #+#    #+#             */
-/*   Updated: 2020/09/27 17:16:05 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/29 16:59:42 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_flags						ft_unsprecition1(t_flags data)
 		{
 			data.ret += write(1, "0", 1);
 			data.precition--;
+			data.width--;
 		}
 	}
 	return (data);
