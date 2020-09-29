@@ -6,11 +6,11 @@
 #    By: pako <pako@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 10:36:02 by pako              #+#    #+#              #
-#    Updated: 2020/09/28 12:29:54 by pako             ###   ########.fr        #
+#    Updated: 2020/09/29 17:21:30 by pako             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Wextra
 
 CC = gcc
 
