@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/28 09:37:24 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/29 16:17:53 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int		main()
 
 */
 	//int a;
-	int maxilofacial_bb;
-
+	//int maxilofacial_bb;
+//
 	//a = 1;
-	maxilofacial_bb = -2147483648;
+	//maxilofacial_bb = -2147483648;
 
 	// TESTS INTS 'd' AND 'i'
 
@@ -145,9 +145,9 @@ int		main()
 	//printf("printf output:    |%07i|\n", -54);
 	//ft_printf("ft printf output: |%03i|\n", 0);
 	//printf("printf output:    |%03i|\n", 0);
-
-	// TESTS '%'
-
+//
+	//// TESTS '%'
+//
 	//ft_printf("ft printf output: |%%|\n");
 	//printf("printf output:    |%%|\n");
 	//ft_printf("ft printf output: |%5%|\n");
@@ -157,13 +157,13 @@ int		main()
 	//ft_printf("ft printf output: |%05%|\n");
 	//printf("printf output:    |%05%|\n");
 	//ft_printf("ft printf output: |%-05%|\n");
-	//printf("printf output:    |%-05%|\n");
-	//ft_printf("ft printf output: |%-5\n");
+	//printf("printf output:    |%-05%|\n\n\n");
+	//ft_printf("ft printf output: |%-5|\n");
 	//printf("printf output:    |%-5|\n");
-
-
-		// TESTS 's'
-
+//
+//
+	//	// TESTS 's'
+//
 	//ft_printf("ft printf output: |%s|\n", "Calabazon");
 	//printf("printf output:    |%s|\n", "Calabazon");
 	//ft_printf("ft printf output: |%5s|\n", "Ole");
@@ -188,7 +188,7 @@ int		main()
 	//printf("printf output:    |%11.5s|\n\n", "Calabazon");
 	//ft_printf("ft printf output: |%-11.5s|\n", "Calabazon");
 	//printf("printf output:    |%-11.5s|\n\n", "Calabazon");
-
+//
 	//ft_printf("ft printf output: |%10.3s|\n", "perro");
 	//printf("printf output:    |%10.3s|\n", "perro");	//width > digit > precition
 	//ft_printf("ft printf output: |%10.7s|\n", "perro");
@@ -213,13 +213,13 @@ int		main()
 	//printf("printf output:    |hello, %s.|\n", NULL);
 	//ft_printf("ft_printf output: |hello, %09s.|\n", "hi low");
 	//printf("printf output:    |hello, %09s.|\n", "hi low");
-	//ft_printf("ft_printf output: |%.4s|\n", NULL);
-	//printf("printf output:    |%.4s|\n", NULL);
-	//ft_printf("ft_printf output: |%-*s|\n", -32);
-	//printf("printf output:    |%-*s|\n", -32);
-
-		// TESTS 'c'
-
+	////ft_printf("ft_printf output: |%.4s|\n", NULL);
+	////printf("printf output:    |%.4s|\n", NULL);
+	////ft_printf("ft_printf output: |%-*s|\n", -32);
+	////printf("printf output:    |%-*s|\n", -32);
+//
+	//	// TESTS 'c'
+//
 	//ft_printf("ft_printf output: |%c|\n", 'd');
 	//printf("printf output:    |%c|\n", 'd');
 	//ft_printf("ft_printf output: |%4c|\n", 'd');
@@ -228,23 +228,23 @@ int		main()
 	//printf("printf output:    |%-4c|\n", 'd');
 	//ft_printf("ft_printf output: |%c%2c%3c%4c%5c%6c|\n", 'd', 'd', 'd', 'd', 'd', 'd');
 	//printf("printf output:    |%c%2c%3c%4c%5c%6c|\n", 'd', 'd', 'd', 'd', 'd', 'd');
-
-		// TESTS '%'
-
+//
+	//	// TESTS '%'
+//
 	//ft_printf("ft_printf output: |%|\n"); //con -Werror no lo pasa
 	//printf("printf output:    |%|\n");
 	//ft_printf("ft_printf output: |%05%|\n"); // Especialito -- Este en "print" me sale mal al compilar en Linux
 	//printf("printf output:    |%05%|\n");
 	//ft_printf("ft_printf output: |%-5|\n"); // Especialito -- Este en "print" me sale mal al compilar en Linux
 	//printf("printf output:    |%-5|\n");
-
-		// TESTS 'u'
-
+//
+	//	// TESTS 'u'
+//
 	//ft_printf("ft_printf output: |%u|\n", 4294967295u); // Especialito -- Este en "print" me sale mal al compilar en Linux
 	//printf("printf output:    |%u|\n", 4294967295u);
-
-		// TEST 'x' y 'X'
-
+//
+	//	// TEST 'x' y 'X'
+//
 	//ft_printf("ft_printf output: |%x|\n", 4294967295u);
 	//printf("printf output:    |%x|\n", 4294967295u);
 	//ft_printf("ft_printf output: |%x|\n", 11);
@@ -281,9 +281,9 @@ int		main()
 	//printf("%X\n", 17);
 	//ft_printf("ft_printf output: |%5x|\n", 52625);
 	//printf("printf output:    |%5x|\n", 52625);
-
-		// TEST 'p'
-
+//
+	//	// TEST 'p'
+//
 	//ft_printf("ft_printf output: |%p|\n", NULL);
 	//printf("printf output:    |%p|\n", NULL);
 	//ft_printf("ft_printf output: |%2p|\n", NULL);
@@ -296,8 +296,8 @@ int		main()
 	//printf("printf output:    |%.p|\n", NULL);
 	//ft_printf("ft_printf output: |%5.p|\n", NULL);
 	//printf("printf output:    |%5.p|\n", NULL);
-
-
+//
+//
 	//ft_printf("ft_printf output: |%2.9p|\n", 1234);
 	//printf("printf output:    |%2.9p|\n", 1234);
 	//ft_printf("ft_printf output: |%p|\n", 4);
@@ -312,25 +312,28 @@ int		main()
 	//printf("printf output:    |%9.2p|\n", 1234);
 	//ft_printf("ft_printf output: |%15p|\n", &a);
 	//printf("printf output:    |%15p|\n", &a);
-
-		// TEST mix ae k psa los urtimo tes eso güeno
-
-	ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
-	printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
-	ft_printf("ft_printf output: |%*s|\n", -32, "abc");
-	printf("printf output:    |%*s|\n", -32, "abc");
-	ft_printf("ft_printf output: |%.*s|\n", -3, "hello");
-	printf("printf output:    |%.*s|\n", -3, "hello");
-	ft_printf("ft_printf output: |%.*s|\n", 0, "hello");
-	printf("printf output:    |%.*s|\n", 0, "hello");
-	ft_printf("ft_printf output: |Hello %5 World|\n");
-	printf("printf output:    |Hello %5 World|\n");
-	ft_printf("ft_printf output: |Hello %-5 World|\n");
-	printf("printf output:    |Hello %-5 World|\n");
+//
+	//	// TEST mix ae k psa los urtimo tes eso güeno
+//
+	//ft_printf("ft_printf output: |%%-d 42 == %-d|\n", maxilofacial_bb);
+	//printf("printf output:    |%%-d 42 == %-d|\n", maxilofacial_bb);
+	//ft_printf("ft_printf output: |%*s|\n", -32, "abc");
+	//printf("printf output:    |%*s|\n", -32, "abc");
+	//ft_printf("ft_printf output: |%.*s|\n", -3, "hello");
+	//printf("printf output:    |%.*s|\n", -3, "hello");
+	//ft_printf("ft_printf output: |%.*s|\n", 0, "hello");
+	//printf("printf output:    |%.*s|\n", 0, "hello");
+	//ft_printf("ft_printf output: |Hello %5 World|\n");
+	//printf("printf output:    |Hello %5 World|\n");
+	//ft_printf("ft_printf output: |Hello %-5 World|\n");
+	//printf("printf output:    |Hello %-5 World|\n");
 	//ft_printf("%-5");
 	//printf("%-5\n");
 	//ft_printf("%5\n");
 	//printf("%5\n");
+
+	ft_printf("ft_printf output: |%-3.4p|\n", 1);
+	printf("printf output:    |%-3.4p|\n", 1);
 
 
 	return (0);
