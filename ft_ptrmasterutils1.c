@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:30:31 by pako              #+#    #+#             */
-/*   Updated: 2020/09/29 19:33:02 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/29 22:36:19 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned int		ft_ptrdigit(unsigned int n, t_flags data)
 		data.digit = 2;
 	m = n;
 	if (m == 0)
-		return (1);
+		return (3);
 	else
 	{
 		while (m != 0)
