@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/29 22:35:12 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/30 15:59:56 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ int		main()
 	ft_printf("Esto es una %0s.\nVamos a ver si podemos imprimir %s.\nOkei, me cago en la play.\n", prueba, empresa);
 
 */
-	//int a;
-	//int maxilofacial_bb;
-//
-	//a = 1;
-	//maxilofacial_bb = -2147483648;
+	int a;
+	int maxilofacial_bb;
+	int *ptr;
+
+	a = 1;
+	ptr = &a;
+	maxilofacial_bb = -2147483648;
 
 	// TESTS INTS 'd' AND 'i'
 
@@ -340,12 +342,15 @@ int		main()
 	//printf("printf output:    |%-15.p|\n", 0);
 	//ft_printf("ft_printf output: |%-2.p|\n", 0);
 	//printf("printf output:    |%-2.p|\n", 0);
-	ft_printf("ft_printf output: |%10.p|\n", 0);
-	printf("printf output:    |%10.p|\n", 0);
-	ft_printf("ft_printf output: |%10.1p|\n", 0);
-	printf("printf output:    |%10.1p|\n", 0);
-	ft_printf("ft_printf output: |%10.2p|\n", 0);
-	printf("printf output:    |%10.2p|\n", 0);
+	ft_printf("ft_printf output: |%10.p|\n", ptr);
+	printf("printf output:    |%10.p|\n", ptr);
+	ft_printf("ft_printf output: |%10.1p|\n", ptr);
+	printf("printf output:    |%10.1p|\n", ptr);
+	ft_printf("ft_printf output: |%10.2p|\n", ptr);
+	printf("printf output:    |%10.2p|\n", ptr);
+	ft_printf("ft_printf output: |%-16p|\n", ptr);
+	printf("printf output:    |%-16p|\n", ptr);
+
 	//ft_printf("ft_printf output: |%0*%|\n", -3);
 	//printf("printf output:    |%0*%|\n", -3);
 	//ft_printf("ft_printf output: |%0*.%|\n", -4);
@@ -360,3 +365,5 @@ int		main()
 
 	return (0);
 }
+
+
