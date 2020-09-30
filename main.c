@@ -6,7 +6,7 @@
 /*   By: pako <pako@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:07:27 by pako              #+#    #+#             */
-/*   Updated: 2020/09/30 15:59:56 by pako             ###   ########.fr       */
+/*   Updated: 2020/09/30 16:03:07 by pako             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -350,6 +350,15 @@ int		main()
 	printf("printf output:    |%10.2p|\n", ptr);
 	ft_printf("ft_printf output: |%-16p|\n", ptr);
 	printf("printf output:    |%-16p|\n", ptr);
+
+	ft_printf("ft_printf output: |%-14p|\n", ptr);
+	printf("printf output:    |%-14p|\n", ptr);
+	ft_printf("ft_printf output: |%-15.p|\n", ptr);
+	printf("printf output:    |%-15.p|\n", ptr);
+	ft_printf("ft_printf output: |%-15p|\n", ptr);
+	printf("printf output:    |%-15p|\n", ptr);
+	ft_printf("ft_printf output: |%-16.p|\n", ptr);
+	printf("printf output:    |%-16.p|\n", ptr);
 
 	//ft_printf("ft_printf output: |%0*%|\n", -3);
 	//printf("printf output:    |%0*%|\n", -3);
